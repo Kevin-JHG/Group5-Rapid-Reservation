@@ -19,7 +19,7 @@ Rapid-Reservation is a web application designed to streamline the table reservat
 ### Backend:
 - Bottle/Django: A lightweight framework to manage the backend and mock server for handling reservations and orders.
 ### Database:
-- Mock Database: JSON files or simple mock databases will be used to store sample data like menus, reservations, and orders.
+- Supabase Database: Supabase databases will be used to store sample data like menus, reservations, and orders.
 ### Tools:
 - Wireframing & Prototyping: Figma, LucidChart, or Excalidraw for UI/UX design.
 - Version Control: GitHub for code collaboration and issue tracking.

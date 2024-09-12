@@ -12,3 +12,16 @@ Rapid-Reservation is a web application designed to streamline the table reservat
 - Confirmation Messages: Simplified approach to payment with confirmation for orders and reservations.
 - Order Tracking (Optional): Users can track the status of their orders.
 - Additional Features (Future): Basic user profiles, favorite items, in-app chat, and multi-language support
+
+## Technology Stack
+### Frontend:
+- HTML, CSS, JavaScript: Used to build the user interface and provide a responsive design.
+### Backend:
+- Bottle/Django: A lightweight framework to manage the backend and mock server for handling reservations and orders.
+### Database:
+- Mock Database: JSON files or simple mock databases will be used to store sample data like menus, reservations, and orders.
+### Tools:
+- Wireframing & Prototyping: Figma, LucidChart, or Excalidraw for UI/UX design.
+- Version Control: GitHub for code collaboration and issue tracking.
+- Project Management: Trello for tracking tasks and project progress.
+- Communication: MS Teams for team discussions and meetings.

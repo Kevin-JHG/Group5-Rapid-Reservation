@@ -25,3 +25,27 @@ Rapid-Reservation is a web application designed to streamline the table reservat
 - Version Control: GitHub for code collaboration and issue tracking.
 - Project Management: Trello for tracking tasks and project progress.
 - Communication: MS Teams for team discussions and meetings.
+
+## Project Milestones
+### Design Phase:
+- Create wireframes for the user interface.
+- Set up a mock database for testing reservations and orders.
+  
+### Development Phase:
+- Implement user login, table reservation, and order placement features.
+- Set up a basic backend to handle data storage and communication.
+
+### Testing & Refinement:
+- Test core functionalities (login, reservations, orders) across different devices.
+- Gather feedback and refine the user interface.
+
+### Final Presentation:
+- Prepare the final demo with a walkthrough of the app’s main features.
+
+## Roles and Responsibilities
+- Frontend Developer: Responsible for building the UI with HTML, CSS, and JavaScript.
+- Backend Developer: Implements backend logic, including table reservations and order handling with Bottle/Django.
+- UI/UX Designer: Creates wireframes and prototypes to ensure an intuitive user experience.
+- Documentation Specialist: Responsible for maintaining project documentation, including README, API documentation, and user guides.
+- Tester: Ensures that the application meets quality standards by testing core features, functionality, and user experience across devices
+- Project Manager: Oversees the project timeline, task assignments, and communication.

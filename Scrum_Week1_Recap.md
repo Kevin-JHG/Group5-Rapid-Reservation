@@ -38,14 +38,14 @@ Attendees: Kevin Hernandez Gaspar, Dalton Perkins, Jason Lee, Asra Khalid, Jonat
 
 ## Key Updates:
 - Sprint Organization:
- - Kevin has organized tasks for the next week and a half, up until the 22nd.
- - There is no new material expected from now on, so the team will work independently.
+  - Kevin has organized tasks for the next week and a half, up until the 22nd.
+  - There is no new material expected from now on, so the team will work independently.
 - Sprint Planning:
- - The team has already planned out the sprints; currently, the main focus is defining user stories.
- - Time estimates for tasks are required, though Kevin noted that they tend to be inaccurate.
+  - The team has already planned out the sprints; currently, the main focus is defining user stories.
+  - Time estimates for tasks are required, though Kevin noted that they tend to be inaccurate.
 - Task Management:
- - Kevin will handle updates and task management on Trello.
- - The sprint backlog will be submitted at the end of the week, along with any necessary setup updates.
+  - Kevin will handle updates and task management on Trello.
+  - The sprint backlog will be submitted at the end of the week, along with any necessary setup updates.
 ## Action Items:
 - Kevin will follow up in the group chat once everything for the week is complete.
 - The team will decide on whether or not to meet next week based on availability.

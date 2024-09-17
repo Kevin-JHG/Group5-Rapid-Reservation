@@ -1,4 +1,4 @@
-# Sprint Meeting Summary
+# Tuesday Sprint Meeting Summary
 Date: Tuesday
 Duration: 40 minutes
 Attendees: Kevin Hernandez Gaspar, Roger Rose, Haley Simmons-Happ, Dalton Perkins, Asra Khalid, Jason Lee
@@ -27,6 +27,28 @@ Attendees: Kevin Hernandez Gaspar, Roger Rose, Haley Simmons-Happ, Dalton Perkin
 - Kevin will send the link to the product backlog and ensure everyone can access the Trello board.
 - Team members will begin working on their assigned tasks this week.
 ## Next Meeting:
-- Date: Thursday (short, 40 minutes)
+- Date: Thursday
 - Note: Asra may not attend due to a personal appointment, but the meeting will be recorded.
+Meeting adjourned.
+
+# Thursday Sprint Meeting Summary
+Date: Thursday
+Duration: 10 minutes
+Attendees: Kevin Hernandez Gaspar, Dalton Perkins, Jason Lee, Asra Khalid, Jonathan Asfoury
+
+## Key Updates:
+- Sprint Organization:
+ - Kevin has organized tasks for the next week and a half, up until the 22nd.
+ - There is no new material expected from now on, so the team will work independently.
+- Sprint Planning:
+ - The team has already planned out the sprints; currently, the main focus is defining user stories.
+ - Time estimates for tasks are required, though Kevin noted that they tend to be inaccurate.
+- Task Management:
+ - Kevin will handle updates and task management on Trello.
+ - The sprint backlog will be submitted at the end of the week, along with any necessary setup updates.
+## Action Items:
+- Kevin will follow up in the group chat once everything for the week is complete.
+- The team will decide on whether or not to meet next week based on availability.
+## Next Meeting:
+- Tentative Date: Tuesday (dependent on progress and availability)
 Meeting adjourned.

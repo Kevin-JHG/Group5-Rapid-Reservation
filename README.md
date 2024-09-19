@@ -44,7 +44,7 @@ Rapid-Reservation is a web application designed to streamline the table reservat
 
 ## Roles and Responsibilities
 - Frontend Developer: Responsible for building the UI with HTML, CSS, and JavaScript.
-- Backend Developer: Implements backend logic, including table reservations and order handling with Bottle/Django.
+- Backend Developer: Implements backend logic, including table reservations and order handling with React.
 - UI/UX Designer: Creates wireframes and prototypes to ensure an intuitive user experience.
 - Documentation Specialist: Responsible for maintaining project documentation, including README, API documentation, and user guides.
 - Tester: Ensures that the application meets quality standards by testing core features, functionality, and user experience across devices

@@ -24,8 +24,7 @@
   -	As a customer, I want to receive confirmation of my table reservation and order, so I know that everything is ready when I arrive.
   -	Acceptance Criteria:
     -	The system should provide a confirmation screen showing the reserved table, time, and a summary of the placed order.
-    -	The confirmation should be emailed or messaged to the customer.
-These stories address the core functionality needed for the web application based on the project's objectives and scope.
+    -	The confirmation should be messaged to the customer.
 
 # Staff User Stories
 ##	View Reservations
@@ -58,4 +57,4 @@ These stories address the core functionality needed for the web application base
   -	Acceptance Criteria:
     -	The system should flag reservations with special requests, allowing the staff to review and make appropriate accommodations.
     -	Special requests should be clearly displayed alongside the customer’s reservation and order details.
-These user stories focus on the staff's ability to efficiently manage reservations, orders, and customer communications, ensuring smooth restaurant operations.
+

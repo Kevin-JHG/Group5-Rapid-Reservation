@@ -1,7 +1,7 @@
 # Sprint Meeting Summary
-Date: Tuesday 9/17/2024
-Duration: 14 minutes
-Attendees: Kevin Hernandez Gaspar, Jason Lee, Dalton Perkins, Asra Khalid, Roger Rose
+- Date: Tuesday 9/17/2024
+- Duration: 14 minutes
+- Attendees: Kevin Hernandez Gaspar, Jason Lee, Dalton Perkins, Asra Khalid, Roger Rose
 
 ## Key Updates:
  ### New Task:

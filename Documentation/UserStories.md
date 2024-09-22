@@ -25,6 +25,12 @@
   -	Acceptance Criteria:
     -	The system should provide a confirmation screen showing the reserved table, time, and a summary of the placed order.
     -	The confirmation should be messaged to the customer.
+##	Handling Large Party Reservations
+  -	As a customer, I want to make a reservation for a large group of people, so I can ensure that enough tables are available for my entire party.
+  -	Acceptance Criteria:
+    -	The system should allow the customer to select a party size larger than the standard seating arrangement and automatically suggest available combinations of tables that can accommodate the group.
+    -	The system should display whether multiple tables will be required and offer an option to confirm seating arrangements for the party.
+
 
 # Staff User Stories
 ##	View Reservations
@@ -57,4 +63,9 @@
   -	Acceptance Criteria:
     -	The system should flag reservations with special requests, allowing the staff to review and make appropriate accommodations.
     -	Special requests should be clearly displayed alongside the customer’s reservation and order details.
-
+##	Managing Special Event Bookings
+  -	As a restaurant manager, I want to handle special event bookings (e.g., private parties, corporate events), so I can allocate tables and resources accordingly.
+  -	Acceptance Criteria:
+    -	The system should allow staff to block off multiple tables or an entire section for special event bookings.
+    -	It should prevent customers from reserving those tables during the event time slot.
+    -	Event details (e.g., number of attendees, special menu requirements) should be displayed for staff to review and manage.

@@ -1,7 +1,7 @@
 # Tuesday Sprint Meeting Summary
-Date: Tuesday
-Duration: 40 minutes
-Attendees: Kevin Hernandez Gaspar, Roger Rose, Haley Simmons-Happ, Dalton Perkins, Asra Khalid, Jason Lee
+- Date: Tuesday
+- Duration: 40 minutes
+- Attendees: Kevin Hernandez Gaspar, Roger Rose, Haley Simmons-Happ, Dalton Perkins, Asra Khalid, Jason Lee
 
 ## Key Updates:
 - Repository and Board Setup:
@@ -32,9 +32,9 @@ Attendees: Kevin Hernandez Gaspar, Roger Rose, Haley Simmons-Happ, Dalton Perkin
 Meeting adjourned.
 
 # Thursday Sprint Meeting Summary
-Date: Thursday
-Duration: 10 minutes
-Attendees: Kevin Hernandez Gaspar, Dalton Perkins, Jason Lee, Asra Khalid, Jonathan Asfoury
+- Date: Thursday
+- Duration: 10 minutes
+- Attendees: Kevin Hernandez Gaspar, Dalton Perkins, Jason Lee, Asra Khalid, Jonathan Asfoury
 
 ## Key Updates:
 - Sprint Organization:

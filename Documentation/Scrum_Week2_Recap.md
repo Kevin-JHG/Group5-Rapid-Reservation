@@ -21,3 +21,26 @@
   - Kevin to update Trello with task progress and refine user stories.
   ## Next Meeting:
   - Date: Thursday
+
+# Thursday Sprint Meeting Summary
+- Date: Thursday-
+- Duration: 10 minutes
+- Attendees: Kevin Hernandez Gaspar, Haley Simmons-Happ, Asra Khalid, Jason Lee, Dalton Perkins
+- Absent: Roger
+
+## Key Updates:
+ ### Project Setup:
+  - Dalton has set up the React project in the GitHub repository. All developers (Jonathan, Dalton, Asra, Roger) should review the project files, especially the React template, in preparation for upcoming development tasks.
+ ### User Stories:
+  - Jason created the initial user stories, which are available in the documentation folder. The team can reference these stories to track project progress and add new user stories as needed for future sprints.
+ ### Upcoming Tasks:
+  - Next week’s focus will be on implementing user registration, login functionality, menu display, and part of the user profile section.
+  - Team members should familiarize themselves with the current project setup and user stories to ensure smooth development.
+ ### Sprint Review Meeting:
+  - A short Sprint review meeting will be held on Sunday at 7:00 PM to record and showcase the week’s accomplishments. This meeting will be brief, around 5 minutes, and will cover the implemented functionalities.
+## Action Items:
+  - All developers to review the project files in GitHub and prepare for next week's tasks.
+  - Additional user stories may be added next week to ensure coverage of all scenarios.
+  - A Sprint review meeting is scheduled for Sunday at 7:00 PM.
+## Next Meeting:
+  - Date: Sunday, 7:00 PM (Sprint review)

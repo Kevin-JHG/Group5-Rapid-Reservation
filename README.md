@@ -16,9 +16,9 @@ Rapid-Reservation is a web application designed to streamline the table reservat
 ## Technology Stack
 ### Frontend:
 - HTML, CSS, JavaScript: Used to build the user interface and provide a responsive design.
-### Backend:
+### Frontend Framework:
 - React: A lightweight framework to manage the backend and mock server for handling reservations and orders.
-### Database:
+### Backend Database:
 - Supabase Database: Supabase databases will be used to store sample data like menus, reservations, and orders.
 ### Tools:
 - Wireframing & Prototyping: Figma, LucidChart, or Excalidraw for UI/UX design.

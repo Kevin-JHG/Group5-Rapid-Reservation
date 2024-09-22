@@ -25,7 +25,7 @@
 # Thursday Sprint Meeting Summary
 - Date: Thursday-
 - Duration: 10 minutes
-- Attendees: Kevin Hernandez Gaspar, Haley Simmons-Happ, Asra Khalid, Jason Lee, Dalton Perkins
+- Attendees: Kevin Hernandez Gaspar, Haley Simmons-Happ, Asra Khalid, Jason Lee, Dalton Perkins, Jonathan Asfoury
 - Absent: Roger
 
 ## Key Updates:

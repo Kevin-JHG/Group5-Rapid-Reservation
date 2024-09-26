@@ -60,4 +60,4 @@ Yes, you can update your email or phone number by visiting your account settings
 If you forget your password, click on the "Forgot Password" link on the login page. You will receive an email or SMS to reset your password.
 
 ## Contact Support
-If you encounter any issues during the registration process or need further assistance, please contact our customer support team at rapid-support@rreservation.com or call 1-800-123-4567.
+If you encounter any issues during the registration process or need further assistance, please contact our customer support team at rapidr-support@rreservation.com or call 1-800-123-4567.

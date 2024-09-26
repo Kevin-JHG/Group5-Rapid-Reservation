@@ -1,5 +1,5 @@
 # User Guide: How to Register for an Account
-This guide walks you through the process of registering a new user account on the platform. Follow these simple steps to create your account and access all features, such as making table reservations, pre-ordering food, and receiving updates about your orders.
+This guide walks you through the process of registering a new user account for Rapid Reservation. Follow these simple steps to create your account and access all features, such as making table reservations, pre-ordering food, and receiving updates about your orders.
 
 ## Step-by-Step Instructions for User Registration
 1. Navigate to the Registration Page

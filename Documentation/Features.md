@@ -11,9 +11,9 @@
    - Confirmation: Upon successful registration, users receive a confirmation email or SMS to verify their account.
    - Optional Profile Setup: After registration, users can set preferences (e.g., dietary restrictions, preferred seating) for future use.
  - Acceptance Criteria:
-   1 The user must be able to input their name, email, phone number, and password to register.
-   2 The system should validate email and phone number formats before allowing registration.
-   3 Passwords must meet strength requirements (e.g., minimum 8 characters, including numbers and symbols).
-   4 Duplicate email or phone numbers should prompt an error message, preventing multiple registrations.
-   5 A verification email or SMS should be sent to confirm the registration process.
-   6 After successful registration, users are redirected to their account dashboard.
+   1. The user must be able to input their name, email, phone number, and password to register.
+   2. The system should validate email and phone number formats before allowing registration.
+   3. Passwords must meet strength requirements (e.g., minimum 8 characters, including numbers and symbols).
+   4. Duplicate email or phone numbers should prompt an error message, preventing multiple registrations.
+   5. A verification email or SMS should be sent to confirm the registration process.
+   6. After successful registration, users are redirected to their account dashboard.

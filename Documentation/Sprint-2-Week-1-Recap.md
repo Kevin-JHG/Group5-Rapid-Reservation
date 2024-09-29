@@ -27,3 +27,28 @@
   - If anyone encounters issues or has questions, they are encouraged to reach out in the group chat for help.
   ## Next Meeting:
   - Date: Thursday
+    
+# Sprint Meeting Summary
+- Date: Thursday 9/26/2024
+- Duration: 10 minutes
+- Attendees: Kevin Hernandez Gaspar, Asra Khalid, Dalton Perkins, Jason Lee, Haley Simmons-Happ, Jonathan Asfoury
+
+## Key Updates:
+ ### Current Progress:
+  - Kevin has begun implementing the bare bones for the Menu UI, User Profile, User Registration, and Supabase integration.
+  - Dalton suggested that team members working on components should hardcode sample data for the UI until the tables are ready and connected to the Supabase API.
+ ### Branch Update:
+  - Kevin created a second branch for routing and is encouraging the team to check the updates when they have time.
+ ### Upcoming Tasks:
+  - **Asra**: Continue working on components with hardcoded data until the backend is connected.
+  - **Dalton**: Focus on setting up tables and connecting the UI to the Supabase API.
+  - **Jonathan**: Continue work on user registration and related components.
+  - **Roger**: Kevin will update Roger in the chat about his tasks.
+ ### Retrospective:
+  - At the end of the Sprint, Kevin will post retrospective questions in the chat for team members to reflect on the progress of the Sprint.
+  - The next Sprint review will happen next week, with no formal meeting scheduled for Sunday.
+ ## Action Items:
+  - All team members to continue working on their respective tasks.
+  - Kevin will post retrospective questions in the chat for team members to respond to at the end of the Sprint.
+  ## Next Meeting:
+  - Date: Tuesday

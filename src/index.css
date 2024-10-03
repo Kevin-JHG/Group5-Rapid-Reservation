@@ -1,0 +1,16 @@
+/* Import Playfair Display font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* Styles for the root element */
+#root {
+  text-align: center; /* Center text alignment */
+  width: 100%; /* Full width */
+  font-family: 'Playfair Display', serif; /* Set font family to Playfair Display */
+}
+
+/* Styles for the body element */
+body {
+  transform: scale(1.5); /* Scale the body content to 150% */
+  transform-origin: top; /* Set the scaling origin to the top */
+  overflow-x: hidden; /* Hide horizontal overflow */
+}

@@ -1,20 +1,257 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+html, body { /* Ensure no default margin or padding on html and body */
+  margin: 0;
+  padding: 0;
 }
 
+/* Banner Styles */
+.banner {
+  background-color: #E6E6E3;
+  color: #000000;
+  font-size:larger;
+  padding: 0.5%; /* Padding for vertical spacing */
+  user-select: none; /* Prevent banner text selection */
+}
+
+/* Navigation Styles */
 nav ul {
-  list-style-type: none;
-  display: inline;
+  list-style-type: none; /* Remove default list styling */
+  background-color: #000000;
+  position: sticky; /* Stick to the top on scroll */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center nav items */
+  margin-top: 0; /* Ensure banner and nav bar are touching */
+  margin-bottom: 3%; /* Increase space between the bottom of nav bar and page content */
 }
 
-nav ul li {
-  display: inline;
-  margin-right: 0px;
+nav ul li { /* Space between nav page links */
+  margin-right: 0.5%;
+  margin-left: 0.5%;
 }
 
-nav ul li:not(:last-child)::after {
-  content: " | ";
+nav ul li a {
+  text-decoration: none; /* Remove underline from links */
+  color: #ffffff;
+  padding: 20px; /* Padding for links */
+  display: inline-block; /* Make link a block for padding */
+  transition-duration: 0.3s; /* Smooth transition for hover effects */
+}
+
+nav ul li a:hover:not(.active) {
+  background-color: #949494; /* Nav bar page background color change on hover */
+}
+
+nav ul li a.active {
+  color: #949494; /* Change nav bar text color for active page */
+}
+
+
+/* HOME PAGE CSS BEGINS */
+
+/* Home Button Container Styles */
+#HomeButtonContainer {
+  display: flex; /* Use flexbox for button layout */
+  justify-content: center; /* Center buttons */
+}
+
+/* Styles for Home Buttons */
+.HomeButtons {
+  color: #000000;
+  background-color: #ffffff;
+  border: 1.5px solid #000000;
+  border-radius: 6.5px; /* Rounded corners */
+  padding: 1% 5%; /* Padding for buttons */
+  /* Button spacing */
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+}
+
+.HomeButtons:hover {
+  background-color: #E6E6E3; /* Change background color on hover */
+  border-color: #E6E6E3; /* Change border color on hover */
+  box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030; /* Shadow effect on hover */
+  cursor: pointer; /* Change pointer cursor on hover */
+  transition-duration: 0.4s; /* Smooth transition for hover effects */
+}
+
+/* Styles for menu preview */
+.gallery-container {
+  display: flex; /* Enable Flexbox */
+  justify-content: center; /* Center items horizontally */
+  margin-bottom: 2.5%; /* Center the container itself */
+}
+
+div.gallery {
+  margin: 0.3%; /* Space around each gallery item */
+  width: 10%; /* Fixed width for gallery items */
+}
+
+div.gallery:hover img {
+  transform: scale(1.1); /* Scale the image up by 10% on hover */
+  transition: transform 0.3s; /* Smooth transition for the scale effect */
+}
+
+div.gallery img {
+  width: 100%; /* Make images responsive to fit the gallery item */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Prevent extra space below the image */
+  user-select: none; /* Prevent text selection */
+  -webkit-user-drag: none; /* Prevent dragging in WebKit (Apple) browsers */
+}
+
+div.name {
+  padding: 5%;
+  user-select: none;
+}
+
+#gallery-title {
+  margin-top: 2.5%;
+  user-select: none;
+  font-size: x-large;
+}
+
+/* Styles for Login Button */
+#LoginButton {
+  color: #ffffff;
+  background-color: #000000;
+  border: #000000;
+  border-radius: 6.5px; /* Rounded corners */
+  padding: 1% 5%; /* Padding for button */
+}
+
+#LoginButton:hover {
+  color: #000000; /* Change text color on hover */
+  background-color: #E6E6E3; /* Change background on hover */
+  box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030; /* Shadow effect on hover */
+  cursor: pointer; /* Change pointer cursor on hover */
+  transition-duration: 0.4s; /* Smooth transition for hover effects */
+}
+
+/* Styles for Customer Reviews */
+#customers {
+  margin-top: 4%;
+  user-select: none;
+  font-size: x-large;
+}
+#temp {
+  margin-bottom: 30%;
+}
+
+/* HOME PAGE CSS ENDS */
+
+/* Media Queries for Responsive Design -TABLETS- */
+@media (max-width: 990px) {
+  .banner {
+    font-size: medium;
+    padding: 0.1%;
+  }
+
+  nav ul {
+    justify-content: center; /* Center nav items on tablet screens */
+    margin-right: 8%; /* Adjust right margin */
+    margin-bottom: 5%; /* Adjust bottom spacing */
+  }
+
+  nav ul li { /* Remove space between nav page links */
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  nav ul li a {
+    padding: 15px; /* Adjust padding for links */
+    font-size: x-small;
+  }
+
+  #HomeButtonContainer {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+  }
+
+  .HomeButtons {
+    font-size: 11px;
+    padding: 1.5%; /* Adjust padding for "Reserve" and "Menu" buttons */
+    width: 22.5%; /* Set width for buttons */
+    margin-bottom: 2%; /* Adjust bottom spacing */
+  }
+
+  div.gallery {
+    margin: 0.5%; /* Space around each gallery item */
+  }
+
+  div.name {
+    font-size: small;
+  }
+
+  #gallery-title {
+    font-size: large;
+  }
+
+  #LoginButton {
+    font-size: 11.5;
+    padding: 1.75%; /* Adjust padding for login button */
+    width: 27.5%; /* Set width for login button */
+  }
+
+  #customers {
+    font-size: large;
+  }
+
+  #temp {
+    font-size: small;
+  }
+}
+
+/* Media Queries for Responsive Design -PHONES- */
+@media (max-width: 576px) {
+  .banner {
+    font-size: 8px;
+    padding: 0.01%;
+  }
+
+  nav ul {
+    margin-right: 40px;
+  }
+
+  nav ul li a {
+    padding: 3px; /* Adjust padding for links */
+    font-size: 8px;
+    display: block;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .HomeButtons {
+    font-size: 8px;
+    padding: 1%; /* Adjust padding for "Reserve" and "Menu" buttons */
+    width: 20%; /* Set width for buttons */
+    margin-bottom: 2%;
+  }
+
+  div.gallery {
+    margin: 0.3%; /* Space around each gallery item */
+    width: 10%; /* Fixed width for gallery items */
+  }
+
+  div.name {
+    font-size: 6.9px;
+  }
+  
+  #gallery-title {
+    margin-top: 2.5%;
+    user-select: none;
+    font-size: smaller;
+  }
+
+  #LoginButton {
+    font-size: 8px;
+    padding: 1.75%; /* Adjust padding for login button */
+    width: 27.5%; /* Set width for login button */
+  }
+
+  #customers {
+    font-size: smaller;
+  }
+
+  #temp {
+    font-size: xx-small;
+  }
 }

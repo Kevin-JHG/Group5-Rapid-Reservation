@@ -12,8 +12,12 @@ import './App.css'
 function App() {
   return (
     <>
+      <div className="banner">
+        <h1>RAPID RESERVATION</h1>
+      </div>
+      
       <BrowserRouter>
-        <Routes>
+        <Routes> 
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
             <Route path='contact' element={<Contact />} />
@@ -25,8 +29,6 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-
-      {/* Insert new code here */}
     </>
   )
 }

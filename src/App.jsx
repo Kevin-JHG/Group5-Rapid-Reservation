@@ -6,6 +6,7 @@ import Login from './navigation/Login';
 import Register from './navigation/Register';
 import Menu from './navigation/Menu';
 import Reservations from './navigation/Reservations';
+import UserProfile from './navigation/EditUserInfo';
 import NoPage from './navigation/NoPage';
 import './App.css'
 
@@ -25,6 +26,7 @@ function App() {
             <Route path='register' element={<Register />} />
             <Route path='menu' element={<Menu />} />
             <Route path='reservations' element={<Reservations />} />
+            <Route path='profile' element={<UserProfile />} />
             <Route path='*' element={<NoPage />} />
           </Route>
         </Routes>

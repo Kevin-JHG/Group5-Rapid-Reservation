@@ -1,0 +1,173 @@
+/* HOME PAGE CSS BEGINS */
+
+/* Home Button Container Styles */
+#HomeButtonContainer {
+  display: flex; /* Use flexbox for button layout */
+  justify-content: center; /* Center buttons */
+}
+
+/* Styles for Home Buttons */
+.HomeButtons {
+  color: #000000;
+  background-color: #ffffff;
+  border: 1.5px solid #000000;
+  border-radius: 6.5px; /* Rounded corners */
+  padding: 1% 5%; /* Padding for buttons */
+  /* Button spacing */
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+}
+
+.HomeButtons:hover {
+  background-color: #E6E6E3; /* Change background color on hover */
+  border-color: #E6E6E3; /* Change border color on hover */
+  box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030; /* Shadow effect on hover */
+  cursor: pointer; /* Change pointer cursor on hover */
+  transition-duration: 0.4s; /* Smooth transition for hover effects */
+}
+
+/* Styles for menu preview */
+.gallery-container {
+  display: flex; /* Enable Flexbox */
+  justify-content: center; /* Center items horizontally */
+  margin-bottom: 2.5%; /* Center the container itself */
+}
+
+div.gallery {
+  margin: 0.3%; /* Space around each gallery item */
+  width: 10%; /* Fixed width for gallery items */
+}
+
+div.gallery:hover img {
+  transform: scale(1.1); /* Scale the image up by 10% on hover */
+  transition: transform 0.3s; /* Smooth transition for the scale effect */
+}
+
+div.gallery img {
+  width: 100%; /* Make images responsive to fit the gallery item */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Prevent extra space below the image */
+  user-select: none; /* Prevent text selection */
+  -webkit-user-drag: none; /* Prevent dragging in WebKit (Apple) browsers */
+}
+
+div.name {
+  padding: 5%;
+  user-select: none;
+}
+
+#gallery-title {
+  margin-top: 2.5%;
+  user-select: none;
+  font-size: x-large;
+}
+
+/* Styles for Login Button */
+#LoginButton {
+  color: #ffffff;
+  background-color: #000000;
+  border: #000000;
+  border-radius: 6.5px; /* Rounded corners */
+  padding: 1% 5%; /* Padding for button */
+}
+
+#LoginButton:hover {
+  color: #000000; /* Change text color on hover */
+  background-color: #E6E6E3; /* Change background on hover */
+  box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030; /* Shadow effect on hover */
+  cursor: pointer; /* Change pointer cursor on hover */
+  transition-duration: 0.4s; /* Smooth transition for hover effects */
+}
+
+/* Styles for Customer Reviews */
+#customers {
+  margin-top: 4%;
+  user-select: none;
+  font-size: x-large;
+}
+#temp {
+  margin-bottom: 30%;
+}
+
+/* HOME PAGE CSS ENDS */
+
+/* Media Queries for Responsive Design -TABLETS- */
+@media (max-width: 990px) {
+  #HomeButtonContainer {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+  }
+
+  .HomeButtons {
+    font-size: 11px;
+    padding: 1.5%; /* Adjust padding for "Reserve" and "Menu" buttons */
+    width: 22.5%; /* Set width for buttons */
+    margin-bottom: 2%; /* Adjust bottom spacing */
+  }
+
+  div.gallery {
+    margin: 0.5%; /* Space around each gallery item */
+  }
+
+  div.name {
+    font-size: small;
+  }
+
+  #gallery-title {
+    font-size: large;
+  }
+
+  #LoginButton {
+    font-size: 11.5;
+    padding: 1.75%; /* Adjust padding for login button */
+    width: 27.5%; /* Set width for login button */
+  }
+
+  #customers {
+    font-size: large;
+  }
+
+  #temp {
+    font-size: small;
+  }
+}
+
+
+/* Media Queries for Responsive Design -PHONES- */
+@media (max-width: 576px) {
+  .HomeButtons {
+    font-size: 8px;
+    padding: 1%; /* Adjust padding for "Reserve" and "Menu" buttons */
+    width: 20%; /* Set width for buttons */
+    margin-bottom: 2%;
+  }
+
+  div.gallery {
+    margin: 0.3%; /* Space around each gallery item */
+    width: 10%; /* Fixed width for gallery items */
+  }
+
+  div.name {
+    font-size: 6.9px;
+  }
+  
+  #gallery-title {
+    margin-top: 2.5%;
+    user-select: none;
+    font-size: smaller;
+  }
+
+  #LoginButton {
+    font-size: 8px;
+    padding: 1.75%; /* Adjust padding for login button */
+    width: 27.5%; /* Set width for login button */
+  }
+
+  #customers {
+    font-size: smaller;
+  }
+
+  #temp {
+    font-size: xx-small;
+  }
+}

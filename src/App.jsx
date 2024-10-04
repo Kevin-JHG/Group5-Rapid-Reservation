@@ -1,13 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './navigation/NavLayout';
-import Home from './navigation/Home';
-import Contact from './navigation/Contact';
-import Login from './navigation/Login';
-import Register from './navigation/Register';
-import Menu from './navigation/Menu';
-import Reservations from './navigation/Reservations';
-import UserProfile from './navigation/EditUserInfo';
-import NoPage from './navigation/NoPage';
+
+import { Contact, Home, Login, Menu, Profile, Register, Reservations, NoPage } from './pages';
+import { Layout } from './components';
+
 import './App.css'
 
 function App() {
@@ -26,7 +21,7 @@ function App() {
             <Route path='register' element={<Register />} />
             <Route path='menu' element={<Menu />} />
             <Route path='reservations' element={<Reservations />} />
-            <Route path='profile' element={<UserProfile />} />
+            <Route path='profile' element={<Profile />} />
             <Route path='*' element={<NoPage />} />
           </Route>
         </Routes>

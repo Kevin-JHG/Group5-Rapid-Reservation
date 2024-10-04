@@ -1,0 +1,8 @@
+export { Contact } from './Contact/Contact'
+export { Home } from './Home/Home'
+export { Login } from './Login/Login'
+export { Menu } from './Menu/Menu'
+export { Profile } from './Profile/Profile'
+export { Register } from './Register/Register'
+export { Reservations } from './Reservations/Reservations'
+export { NoPage } from './NoPage'

@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 
-const Home = () => {
+import './home.css'
+
+export const Home = () => {
   const navigate = useNavigate(); // Get the navigate function
 
   const handleReserve = () => {
@@ -49,5 +51,3 @@ const Home = () => {
     </>
   );
 };
-  
-export default Home;

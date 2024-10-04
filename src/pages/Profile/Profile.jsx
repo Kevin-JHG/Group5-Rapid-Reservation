@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import './profile.css'
 
-const UserProfile = () => {
+export const Profile = () => {
   // User's initial information
   const [userInfo, setUserInfo] = useState({
     firstName: 'John',
@@ -68,5 +69,3 @@ const UserProfile = () => {
     </div>
   );
 };
-
-export default UserProfile;

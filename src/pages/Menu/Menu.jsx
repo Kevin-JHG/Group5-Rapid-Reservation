@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '../../api/supabase'
 import './menu.css';
-
-// Directly include the URL and Key
-const supabaseUrl = 'https://engatfrqdzvmrokccrhb.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVuZ2F0ZnJxZHp2bXJva2NjcmhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjYwMDQyNjQsImV4cCI6MjA0MTU4MDI2NH0.mItFc6SDsdwxlukLk61HVOAsZYvv5VxHWIxWo5P4kNo'; // Replace with your actual Supabase key
-const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);

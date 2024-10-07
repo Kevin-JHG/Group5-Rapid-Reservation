@@ -13,6 +13,18 @@ Rapid-Reservation is a web application designed to streamline the table reservat
 - Order Tracking (Optional): Users can track the status of their orders.
 - Additional Features (Future): Basic user profiles, favorite items, in-app chat, and multi-language support
 
+## Setup Supabase
+
+First, install new packages with
+```sh
+npm install
+```
+Next create a `.env` file in the root of the project and add the Supabase url and API key
+```sh
+VITE_SUPABASE_URL=<supabase-url-here>
+VITE_SUPABASE_ANON_KEY=<supbase-anon-key-here>
+```
+
 ## Technology Stack
 ### Frontend:
 - HTML, CSS, JavaScript: Used to build the user interface and provide a responsive design.

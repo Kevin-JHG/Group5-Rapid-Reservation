@@ -1,5 +1,13 @@
 import './contact.css'
+import React from 'react';
 
 export const Contact = () => {
-  return <h1>Contact</h1>
-}
+  return (
+    <div>
+      <h1>Contact Us</h1>
+      <p>Rapid Reservation</p>
+      <p>Phone Number: 123-456-7890</p>
+      <p>Email: rapidres@email.com</p>
+    </div>
+  );
+};

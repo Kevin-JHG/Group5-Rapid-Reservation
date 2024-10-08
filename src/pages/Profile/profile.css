@@ -1,0 +1,128 @@
+/* PROFILE PAGE CSS BEGINS */
+
+/* Profile Container Styles */
+#ProfileContainer {
+    display: flex;
+    flex-direction: column;
+    /* Stack fields vertically */
+    align-items: center;
+    /* Center fields */
+    margin: 2% auto;
+    /* Center the container */
+    width: 50%;
+    /* Adjust width as needed */
+}
+
+/* Styles for Labels and Fields */
+.ProfileField {
+    display: flex;
+    justify-content: space-between;
+    /* Align labels and fields */
+    width: 100%;
+    /* Take full container width */
+    margin-bottom: 1.5%;
+    /* Space between fields */
+}
+
+.ProfileField label {
+    font-weight: bold;
+    margin-right: 1%;
+    /* Space between label and field */
+}
+
+/* Styles for Input Fields */
+.ProfileInput {
+    color: #000000;
+    background-color: #ffffff;
+    border: 1.5px solid #000000;
+    border-radius: 6.5px;
+    /* Rounded corners */
+    padding: 0.5% 1%;
+    /* Padding for input fields */
+    width: 70%;
+    /* Adjust field width */
+}
+
+.ProfileInput:focus {
+    border-color: #E6E6E3;
+    /* Highlight border on focus */
+    outline: none;
+    transition-duration: 0.3s;
+    /* Smooth transition for focus */
+}
+
+/* Styles for Buttons */
+.ProfileButton {
+    color: #ffffff;
+    background-color: #000000;
+    border: 1.5px solid #000000;
+    border-radius: 6.5px;
+    /* Rounded corners */
+    padding: 0.5% 2%;
+    /* Padding for buttons */
+    margin-left: 1%;
+    /* Space between buttons */
+}
+
+.ProfileButton:hover {
+    background-color: #E6E6E3;
+    /* Change background on hover */
+    color: #000000;
+    /* Change text color on hover */
+    box-shadow: 0 6px 10px 0 #0000003d, 0 8px 20px 0 #00000030;
+    /* Shadow effect */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition-duration: 0.4s;
+    /* Smooth transition */
+}
+
+/* Heading Style */
+#ProfileHeading {
+    font-size: x-large;
+    margin-bottom: 2%;
+    /* Space below heading */
+    text-align: center;
+}
+
+/* PROFILE PAGE CSS ENDS */
+
+/* Media Queries for Responsive Design -TABLETS- */
+@media (max-width: 990px) {
+    #ProfileContainer {
+        width: 75%;
+        /* Adjust container width */
+    }
+
+    .ProfileInput {
+        width: 65%;
+        /* Adjust input width */
+    }
+
+    #ProfileHeading {
+        font-size: large;
+    }
+}
+
+/* Media Queries for Responsive Design -PHONES- */
+@media (max-width: 576px) {
+    #ProfileContainer {
+        width: 90%;
+        /* Further adjust container width */
+    }
+
+    .ProfileInput {
+        width: 60%;
+        /* Further adjust input width */
+    }
+
+    .ProfileButton {
+        font-size: 10px;
+        padding: 1%;
+        /* Adjust padding for smaller screens */
+    }
+
+    #ProfileHeading {
+        font-size: medium;
+    }
+}

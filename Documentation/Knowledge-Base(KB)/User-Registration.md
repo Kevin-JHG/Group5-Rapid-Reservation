@@ -13,7 +13,7 @@ This guide walks you through the process of registering a new user account for R
     - Phone Number: Input your mobile number. This is optional but may be required for two-factor authentication or SMS notifications.
     - Password: Create a strong password with at least 8 characters, including a combination of letters, numbers, and symbols.
     - Confirm Password: Re-enter the password to ensure it matches.
-      ![Rapid Reservation Sign up](signup.png)
+      ![Rapid Reservation Sign up](Sign Up.png)
 3. Agree to Terms and Conditions
   - Review the platform’s Terms of Service and Privacy Policy.
   - Check the box that confirms you agree to these terms before proceeding.

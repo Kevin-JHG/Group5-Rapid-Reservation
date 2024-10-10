@@ -29,8 +29,6 @@
    - Forgot Password Option: Users can recover or reset their password via email if forgotten, ensuring smooth account recovery.
    - Security Features:
      - Protection against brute force attacks by limiting the number of failed login attempts (e.g., account lock after multiple failures).
-   - Remember Me Option: Users can opt to remain logged in on their device for future access without re-entering credentials. (Optional)
-   - Session Management: Automatically logs users out after a period of inactivity for security purposes. (Optional)
  - Acceptance Criteria:
    1. The user must be able to input their username/email and password.
    2. The system should authenticate the user and grant access to their account if the credentials are correct.

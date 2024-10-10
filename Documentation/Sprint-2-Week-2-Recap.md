@@ -10,6 +10,7 @@
       ![Rapid Reservation Diagram](Rapid-Reservation-Diagram.jpg)
   - Current Progress:
     - Kevin has started implementing basic components for the menu UI, user profile, user registration, and Supabase integration.
+      ![Rapid Reservation Landing page](LandingPageProgress.jpeg)
     - Haley is working on detailed mockups for the user registration, login, and menu pages. She will also create a user profile mockup, as it was missing, and plans to have it completed by tonight or tomorrow afternoon.
   - Component Development:
     - Team members are encouraged to work on components using hardcoded data while Dalton finalizes the database and Supabase API setup.

@@ -9,7 +9,6 @@
    - Phone Number Validation: A valid phone number format is required, with optional two-factor authentication for security.
    - Unique Account Creation: The system ensures that each email and phone number is associated with only one account.
    - Confirmation: Upon successful registration, users receive a confirmation email or SMS to verify their account.
-   - Optional Profile Setup: After registration, users can set preferences (e.g., dietary restrictions, preferred seating) for future use.
  - Acceptance Criteria:
    1. The user must be able to input their name, email, phone number, and password to register.
    2. The system should validate email and phone number formats before allowing registration.

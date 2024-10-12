@@ -10,6 +10,7 @@ html, body { /* Ensure no default margin or padding on html and body */
   font-size:larger;
   padding: 0.5%; /* Padding for vertical spacing */
   user-select: none; /* Prevent banner text selection */
+  text-align: center;
 }
 
 

@@ -101,7 +101,9 @@ export const Home = () => {
         </SimpleGrid>
       </Flex>
 
-      <Button color="dark" onClick={handleLogin} radius="md" size="xl" style={{marginBottom: '3%'}}>LOGIN / SIGN UP</Button>
+      <Flex justify='center'>
+        <Button color="dark" onClick={handleLogin} radius="md" size="xl" style={{marginBottom: '3%'}}>LOGIN / SIGN UP</Button>
+      </Flex>
 
       <Title order={2}>What Our Customers Say</Title>
       <Flex direction="column" align="center" style={{ margin: '1% 0', marginBottom: '5%' }}>

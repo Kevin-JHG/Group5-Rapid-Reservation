@@ -1,5 +1,7 @@
 /* Navigation Styles */
+
 nav ul {
+  width: 100%;
   list-style-type: none; /* Remove default list styling */
   background-color: #000000;
   position: sticky; /* Stick to the top on scroll */

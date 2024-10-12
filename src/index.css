@@ -10,7 +10,7 @@
 
 /* Styles for the body element */
 body {
-  transform: scale(1.5); /* Scale the body content to 150% */
+  transform: scale(1.4); /* Scale the body content to 140% */
   transform-origin: top; /* Set the scaling origin to the top */
   overflow-x: hidden; /* Hide horizontal overflow */
 }

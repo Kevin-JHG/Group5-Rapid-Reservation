@@ -9,7 +9,6 @@ export const Menu = () => {
   const [activeTab, setActiveTab] = useState(0)
   const tabs = ['Appetizer', 'Dessert', 'Entree', 'Alcohol', 'Beverage']
   const sectionRefs = useRef([])
-  const [restaurantName, setRestaurantName] = useState('')
 
   const scrollToSection = index => {
     sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth' })
@@ -63,13 +62,6 @@ export const Menu = () => {
     <div className="container">
       {menuItems.length > 0 ? (
         <>
-          <input
-            type="text"
-            value={restaurantName}
-            onChange={e => setRestaurantName(e.target.value)}
-            placeholder="Enter Restaurant Name"
-            className="restaurant-input"
-          />
           <div className="tabs">
             {tabs.map((tab, index) => (
               <button

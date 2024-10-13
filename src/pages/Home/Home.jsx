@@ -61,7 +61,7 @@ export const Home = () => {
         <Button variant="outline" color="dark" onClick={handleMenu} radius="md" size="xl">MENU</Button>
       </Flex>
 
-      <Title order={2} style={{ marginTop: '2.5%', marginBottom: '1%' }}>Featured Menu Items</Title>
+      <Title align="center" order={2} style={{ marginTop: '2.5%', marginBottom: '1%' }}>Featured Menu Items</Title>
       <Flex justify="center" style={{ maxWidth: '50%', margin: '0 auto', marginBottom: '3%'}}>
         <SimpleGrid 
           cols={4} 
@@ -105,7 +105,7 @@ export const Home = () => {
         <Button color="dark" onClick={handleLogin} radius="md" size="xl" style={{marginBottom: '3%'}}>LOGIN / SIGN UP</Button>
       </Flex>
 
-      <Title order={2}>What Our Customers Say</Title>
+      <Title align="center" order={2}>What Our Customers Say</Title>
       <Flex direction="column" align="center" style={{ margin: '1% 0', marginBottom: '5%' }}>
         <Flex wrap="wrap" justify="center" style={{ marginBottom: '10px', transform: 'translateX(-20px)' }}>
           {reviews.slice(0, 3).map(review => (

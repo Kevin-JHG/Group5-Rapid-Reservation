@@ -1,68 +1,98 @@
-import './register.css';
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom'
+import { PasswordInput, TextInput, Button } from '@mantine/core'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+
+import { supabase } from '../../api/supabase'
+
+import './register.css'
+
+// schema for register form
+const schema = yup
+  .object({
+    firstName: yup.string().required('First Name is required.'),
+    lastName: yup.string().required('Last Name is required.'),
+    email: yup.string().email('Invalid email format.').required('Email is required.'),
+    password: yup.string().min(8, 'Password must be more than 8 characters.').required('Password is required.'),
+    confirmPassword: yup
+      .string()
+      .min(8, 'Password must be more than 8 characters.')
+      .required('Confirm Password is requried.')
+      .oneOf([yup.ref('password')], 'Passwords must match.'),
+  })
+  .required()
 
 export const Register = () => {
-    useEffect(() => {
-        // This will grab the form element
-        const form = document.getElementById('registrationForm');
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  })
 
-        // Form Submission
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
+  const onSubmit = async ({ email, password, firstName, lastName }) => {
+    try {
+      const { error: signUpError } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            first_name: firstName,
+            last_name: lastName,
+          },
+        },
+      })
 
-            // Get the password input value
-            const password = document.getElementById('password').value;
-
-            // Check if the password meets the requirements
-            if (!isValidPassword(password)) {
-                // If password is invalid, show the error message
-                document.getElementById('passwordError').textContent =
-                    'Password must be at least 8 characters long and include letters, numbers, and special characters.';
-            } else {
-                // If the password is valid, clear the error message and proceed
-                document.getElementById('passwordError').textContent = '';
-                alert('Registration successful!');
-                form.reset(); // Clear the form
-            }
-        });
-
-        // Clean up the event listener
-        return () => {
-            form.removeEventListener('submit', () => {}); // Add appropriate cleanup if needed
-        };
-    }, []); // Empty dependency array ensures this runs once on mount
-
-    // Function to check if the password meets the requirements
-    function isValidPassword(password) {
-        // Regular expression to check password: at least 8 characters, includes letters, numbers, and special characters
-        const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-        return passwordPattern.test(password);
+      if (signUpError) {
+        throw new Error(signUpError.message)
+      }
+    } catch (error) {
+      setError('root', {
+        type: 'manual',
+        message: error | 'Something went wrong',
+      })
     }
+  }
 
-    return (
-        <div className="registrationPage">
-            <form id="registrationForm">
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" required />
+  return (
+    <div>
+      <div className="register-form-wrapper">
+        <h1 className="register-heading">Welcome to Rapid Reservation.</h1>
+        <p className="register-subheading">Signup to reserve your table today!</p>
 
-                <label htmlFor="username">Username:</label>
-                <input type="text" id="username" name="username" required />
+        <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
+          <TextInput label="First Name" placeholder="John" {...register('firstName')} />
+          <p className="register-input-error">{errors.firstName?.message}</p>
 
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" required />
+          <TextInput label="Last Name" placeholder="Doe" {...register('lastName')} />
+          <p className="register-input-error">{errors.lastName?.message}</p>
 
-                <label htmlFor="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required />
+          <TextInput type="email" label="Email" placeholder="johndoe@email.com" {...register('email')} />
+          <p className="register-input-error">{errors.email?.message}</p>
 
-                <label htmlFor="birthday">Birthday:</label>
-                <input type="date" id="birthday" name="birthday" required />
+          <PasswordInput label="Password" placeholder="Your password" {...register('password')} />
+          <p className="register-input-error">{errors.password?.message}</p>
 
-                <label htmlFor="password">Password:</label>
-                <input type="password" id="password" name="password" required />
-                <div id="passwordError" className="error"></div>
+          <PasswordInput label="Confirm Password" placeholder="Your password" {...register('confirmPassword')} />
+          <p className="register-input-error">{errors.confirmPassword?.message}</p>
 
-                <button type="submit">Register</button>
-            </form>
-        </div>
-    );
-};
+          <Button type="submit" fullWidth className="register-button">
+            Register
+          </Button>
+
+          {errors.root && <p className="register-input-error">{errors.root.message}</p>}
+
+          <p className="register-login-text">
+            Already have an account?{' '}
+            <Link to="/login" className="register-login-link">
+              Login
+            </Link>
+          </p>
+        </form>
+      </div>
+    </div>
+  )
+}

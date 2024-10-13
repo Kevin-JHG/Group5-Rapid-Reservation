@@ -1,57 +1,40 @@
-/* Basic styling for the registration form */
-.registrationPage {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
+.register-form-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
-#registrationForm {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Fixed width for the form */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
+.register-heading {
+  margin: 12px 0 8px 0;
 }
 
-h2 {
-    text-align: center; /* Center the heading */
-    margin-bottom: 20px; /* Space below the heading */
+.register-subheading {
+  color: #4b5563;
+  margin: 0 0 20px 0;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Include padding in the width */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Scoped button styles */
-.registrationPage button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%; /* Full width for the button */
+.register-button {
+  margin-top: 4px;
 }
 
-.registrationPage button:hover {
-    background-color: #45a049;
+.register-login-text {
+  color: #4b5563;
+  text-align: center;
 }
 
-.error {
-    color: red;
-    font-size: 14px;
-    margin-top: -5px; /* Slightly raise the error message */
-    margin-bottom: 10px; /* Space below the error message */
+.register-login-link {
+  color: #3b82f6;
+}
+
+.register-input-error {
+  margin: 0;
+  color: #dc2626;
 }

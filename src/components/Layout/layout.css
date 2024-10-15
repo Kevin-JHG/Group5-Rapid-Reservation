@@ -1,14 +1,28 @@
 /* Navigation Styles */
 
-nav ul {
-  width: 100%;
-  list-style-type: none; /* Remove default list styling */
+nav {
   background-color: #000000;
-  position: sticky; /* Stick to the top on scroll */
-  display: flex; /* Use flexbox for layout */
-  justify-content: center; /* Center nav items */
-  margin-top: 0; /* Ensure banner and nav bar are touching */
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically align items */
+  padding: 0 32%;
   margin-bottom: 3%; /* Increase space between the bottom of nav bar and page content */
+  user-select: none;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1; /* Ensure nav links stay centered */
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center; /* Center nav items */
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li { /* Space between nav page links */
@@ -32,38 +46,57 @@ nav ul li a.active {
   color: #949494; /* Change nav bar text color for active page */
 }
 
+/* Profile Icon Styles */
+.profile-icon {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push the profile icon to the far right */
+  cursor: pointer;
+}
+
+.profile-icon img {
+  border-radius: 50%; /* Make image round */
+  width: 40px; /* Size of the profile icon */
+  height: 40px;
+  object-fit: cover; /* Ensure image covers the area */
+  border: 2px solid #fff; /* Add white border to icon */
+}
+
+.profile-icon:hover img {
+  border-color: #bababa; /* Change border color on hover */
+  transform: scale(1.2);
+}
 
 /* Media Queries for Responsive Design -TABLETS- */
 @media (max-width: 990px) {
-  nav ul {
-    justify-content: center; /* Center nav items on tablet screens */
-    margin-right: 8%; /* Adjust right margin */
-    margin-bottom: 5%; /* Adjust bottom spacing */
-  }
-
-  nav ul li { /* Remove space between nav page links */
-    margin-right: 0;
-    margin-left: 0;
+  nav {
+    justify-content: space-between; /* Keep space between nav links and profile icon */
+    padding: 0 5%; /* Adjust padding */
   }
 
   nav ul li a {
     padding: 15px; /* Adjust padding for links */
     font-size: x-small;
   }
-}
 
+  .profile-icon img {
+    width: 35px; /* Adjust size for tablet */
+    height: 35px;
+  }
+}
 
 /* Media Queries for Responsive Design -PHONES- */
 @media (max-width: 576px) {
-  nav ul {
-    margin-right: 40px;
-  }
-
   nav ul li a {
     padding: 3px; /* Adjust padding for links */
     font-size: 8px;
     display: block;
     padding-top: 7px;
     padding-bottom: 7px;
+  }
+
+  .profile-icon img {
+    width: 30px; /* Adjust size for phone */
+    height: 30px;
   }
 }

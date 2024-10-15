@@ -22,3 +22,25 @@
   - Team members should create a .env file locally for API keys and URLs as discussed.
  ## Next Meeting:
   - Date: Thursday
+
+# Sprint Meeting Summary
+- Date: Tuesday 10/10/2024
+- Duration: 15 minutes
+- Attendees: Kevin Hernandez Gaspar, Dalton Perkins, Asra Khalid, Jason Lee
+
+## Key Updates:
+  - Sprint #2 Progress/Reflection:
+    - Kevin posted questions for Sprint #2 in the chat for team members to answer.
+    - Jason will document features implemented so far and continue working on tutorials for the app's features.
+  - ENV File Discussion:
+    - Dalton clarified how to correctly set up the .env file for managing environment variables.
+    - The team discussed using the .env file to avoid exposing API keys and URLs in the public repository.
+    - Jason confirmed he would make the necessary adjustments based on the discussion.
+  - Next Steps:
+    - Team members will continue working on their tasks and answer Kevin's posted questions in the chat.
+      ![Rapid Reservation menu page](menu-card-updated.png)
+ ## Action Items:
+   - All Team Members: Answer Sprint #2 questions posted by Kevin in the chat.
+ ## Next Meeting:
+  - Date: Tuesday
+      

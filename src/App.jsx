@@ -43,10 +43,6 @@ function App() {
 
   return (
     <MantineProvider theme={theme}>
-      <div className="banner">
-        <h1>RAPID RESERVATION</h1>
-      </div>
-
       <Routes>
         <Route path="/" element={<Layout session={session} />}>
           <Route index element={<Home />} />

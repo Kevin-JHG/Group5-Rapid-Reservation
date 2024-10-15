@@ -38,6 +38,7 @@
     - Jason confirmed he would make the necessary adjustments based on the discussion.
   - Next Steps:
     - Team members will continue working on their tasks and answer Kevin's posted questions in the chat.
+      ![Rapid Reservation menu page](menu-card-updated.png)
  ## Action Items:
    - All Team Members: Answer Sprint #2 questions posted by Kevin in the chat.
  ## Next Meeting:

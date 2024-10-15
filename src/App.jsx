@@ -48,7 +48,7 @@ function App() {
       </div>
 
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout session={session} />}>
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />

@@ -56,7 +56,7 @@ export const Home = () => {
 
   return (
     <>
-      <Flex justify="center" sx={{ width: '100%'}} gap="md">
+      <Flex justify="center" sx={{ width: '100%'}} pt="md" gap="md">
         <Button variant="outline" color="dark" onClick={handleReserve} radius="md" size="xl">RESERVE</Button>
         <Button variant="outline" color="dark" onClick={handleMenu} radius="md" size="xl">MENU</Button>
       </Flex>

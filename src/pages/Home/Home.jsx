@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../api/supabase';
 import { Flex, Button, Image, SimpleGrid, Title, Text, Card } from '@mantine/core';
+import styles from './Home.module.css';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -52,16 +53,16 @@ export const Home = () => {
     { id: 4, name: "Diana Reyes", text: "Made a reservation for my anniversary, and it was flawless! The staff even had a surprise dessert waiting for us!" },
     { id: 5, name: "Evan Patel", text: "This app saves me so much time! I can order ahead and just walk in to enjoy a fantastic meal!" },
     { id: 6, name: "Fiona Chang", text: "I can’t recommend this enough! I’ve reserved tables for group outings, and everything has gone off without a hitch!" },
-  ];  
+  ];
 
   return (
     <>
-      <Flex justify="center" sx={{ width: '100%'}} pt="md" gap="md">
+      <Flex justify="center" style={{ width: '100%', marginTop: '3%'}} gap="md">
         <Button variant="outline" color="dark" onClick={handleReserve} radius="md" size="xl">RESERVE</Button>
         <Button variant="outline" color="dark" onClick={handleMenu} radius="md" size="xl">MENU</Button>
       </Flex>
 
-      <Title align="center" order={2} style={{ marginTop: '2.5%', marginBottom: '1%' }}>Featured Menu Items</Title>
+      <Title align="center" order={2} style={{ marginTop: '2.5%', marginBottom: '1%', userSelect: 'none' }}>Featured Menu Items</Title>
       <Flex justify="center" style={{ maxWidth: '50%', margin: '0 auto', marginBottom: '3%'}}>
         <SimpleGrid 
           cols={4} 
@@ -86,15 +87,12 @@ export const Home = () => {
             <p>{error}</p>
           ) : (
             featuredItems.map(item => (
-              <Flex key={item.id} direction="column" align="center">
+              <Flex key={item.id} direction="column" align="center" className={styles.featuredItemCard}>
                 <Image 
-                  src={getImagePath(item.id)} 
-                  alt={item.description} 
-                  width="100%"
-                  height="100%"
-                  fit="cover"
+                  src={getImagePath(item.id)}
+                  alt={item.description}
                 />
-                <Flex style={{ marginTop: '3%'}}>{item.name}</Flex>
+                <Text style={{ marginTop: '3%'}} className={styles.featuredItemName}>{item.name}</Text>
               </Flex>
             ))
           )}
@@ -102,11 +100,11 @@ export const Home = () => {
       </Flex>
 
       <Flex justify='center'>
-        <Button color="dark" onClick={handleLogin} radius="md" size="xl" style={{marginBottom: '3%'}}>LOGIN / SIGN UP</Button>
+        <Button color="dark" onClick={handleLogin} radius="md" size="xl" style={{ marginBottom: '3%' }}>LOGIN / SIGN UP</Button>
       </Flex>
 
-      <Title align="center" order={2}>What Our Customers Say</Title>
-      <Flex direction="column" align="center" style={{ margin: '1% 0', marginBottom: '5%' }}>
+      <Title align="center" order={2} style={{ userSelect: 'none' }}>What Our Customers Say</Title>
+      <Flex direction="column" align="center" style={{ margin: '1% 0', marginBottom: '5%', userSelect: 'none' }}>
         <Flex wrap="wrap" justify="center" style={{ marginBottom: '10px', transform: 'translateX(-20px)' }}>
           {reviews.slice(0, 3).map(review => (
             <Card key={review.id} shadow="sm" padding="lg" style={{

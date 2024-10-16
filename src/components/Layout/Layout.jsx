@@ -1,8 +1,9 @@
-import { Group, Button, Divider, Burger, Drawer, ScrollArea, rem } from '@mantine/core'
+import { Group, Button, Divider, Burger, Drawer, ScrollArea, Modal, Center, rem } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 
 import { IconAddressBook, IconCalendar, IconHome, IconToolsKitchen2, IconUser } from '@tabler/icons-react'
+import { supabase } from '../../api/supabase'
 
 import classes from './Layout.module.css'
 
@@ -16,8 +17,23 @@ const LogoLink = ({ onClick }) => {
   )
 }
 
-export const Layout = ({ session }) => {
+export const Layout = ({ session, setSession }) => {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false)
+  const [logoutModalOpened, { open: openLogoutModal, close: closeLogoutModal }] = useDisclosure(false);
+
+  const navigate = useNavigate();
+
+  // Function to handle log out
+  const handleLogout = async () => {
+    closeLogoutModal();
+    navigate('/'); // Redirect user to home page on logout
+    try {
+      await supabase.auth.signOut();
+      setSession(null); // Clear session after logout
+    } catch (error) {
+      console.error("Logout failed:", error.message);
+    }
+  };
 
   return (
     <>
@@ -42,11 +58,14 @@ export const Layout = ({ session }) => {
 
           <Group visibleFrom="sm">
             {session ? (
-              <NavLink to="/profile">
-                <Button color="dark" leftSection={<IconUser size={18} />}>
-                  Profile
-                </Button>
-              </NavLink>
+              <>
+                <NavLink to="/profile">
+                  <Button color="dark" leftSection={<IconUser size={18} />}>
+                    Profile
+                  </Button>
+                </NavLink>
+                <Button color="red" onClick={openLogoutModal} style={{ marginLeft: '0.1rem' }}>Log out</Button>
+              </>
             ) : (
               <>
                 <NavLink to="/login">
@@ -62,6 +81,17 @@ export const Layout = ({ session }) => {
           <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
         </Group>
       </header>
+
+      <Modal opened={logoutModalOpened} onClose={closeLogoutModal} title="Confirm Logout">
+        <p>Are you sure you want to log out?</p>
+        <Center>
+          <Group position="right" mt="md">
+              <Button onClick={closeLogoutModal} variant="default">Cancel</Button>
+              <Button color="red" onClick={handleLogout}>Yes, log out</Button>
+          </Group>
+        </Center>
+      </Modal>
+
 
       {/* Mobile nav drawer */}
       <Drawer
@@ -93,10 +123,23 @@ export const Layout = ({ session }) => {
             Contact
           </NavLink>
           {session && (
-            <NavLink to="/profile" className={classes.navLink} onClick={closeDrawer}>
-              <IconUser size={18} className={classes.navIcon} />
-              Profile
-            </NavLink>
+            <>
+              <NavLink to="/profile" className={classes.navLink} onClick={closeDrawer}>
+                <IconUser size={18} className={classes.navIcon} />
+                Profile
+              </NavLink>
+              <Center>
+                <Button 
+                  color="red" 
+                  onClick={() => {
+                    closeDrawer(); // Close the drawer
+                    openLogoutModal(); // Open the logout modal
+                  }} 
+                  style={{ marginTop: '1rem', width: '90%' }}>
+                  Log out
+                </Button>
+              </Center>
+            </>
           )}
 
           {!session && (

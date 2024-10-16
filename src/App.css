@@ -2,30 +2,3 @@ html, body { /* Ensure no default margin or padding on html and body */
   margin: 0;
   padding: 0;
 }
-
-/* Banner Styles */
-.banner {
-  background-color: #E6E6E3;
-  color: #000000;
-  font-size:larger;
-  padding: 0.5%; /* Padding for vertical spacing */
-  user-select: none; /* Prevent banner text selection */
-  text-align: center;
-}
-
-
-/* Media Queries for Responsive Design -TABLETS- */
-@media (max-width: 990px) {
-  .banner {
-    font-size: medium;
-    padding: 0.1%;
-  }
-}
-
-/* Media Queries for Responsive Design -PHONES- */
-@media (max-width: 576px) {
-  .banner {
-    font-size: 8px;
-    padding: 0.01%;
-  }
-}

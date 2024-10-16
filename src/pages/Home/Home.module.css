@@ -1,0 +1,31 @@
+/* Home.module.css */
+.featuredItemCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5%;
+}
+
+.featuredItemCard:hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(5%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.featuredItemCard img {
+  border-radius: 5%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.featuredItemName {
+  font-weight: 600;
+  text-align: center;
+  user-select: none;
+}
+
+.featuredItemCard:hover img {
+  transform: scale(1.05);
+}

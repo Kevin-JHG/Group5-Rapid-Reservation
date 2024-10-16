@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../api/supabase';
 import { Flex, Button, Image, SimpleGrid, Title, Text, Card } from '@mantine/core';
-import "./home.css";
+import styles from './Home.module.css';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -53,11 +53,11 @@ export const Home = () => {
     { id: 4, name: "Diana Reyes", text: "Made a reservation for my anniversary, and it was flawless! The staff even had a surprise dessert waiting for us!" },
     { id: 5, name: "Evan Patel", text: "This app saves me so much time! I can order ahead and just walk in to enjoy a fantastic meal!" },
     { id: 6, name: "Fiona Chang", text: "I can’t recommend this enough! I’ve reserved tables for group outings, and everything has gone off without a hitch!" },
-  ];  
+  ];
 
   return (
     <>
-      <Flex justify="center" sx={{ width: '100%'}} gap="md">
+      <Flex justify="center" style={{ width: '100%', marginTop: '3%'}} gap="md">
         <Button variant="outline" color="dark" onClick={handleReserve} radius="md" size="xl">RESERVE</Button>
         <Button variant="outline" color="dark" onClick={handleMenu} radius="md" size="xl">MENU</Button>
       </Flex>
@@ -87,12 +87,12 @@ export const Home = () => {
             <p>{error}</p>
           ) : (
             featuredItems.map(item => (
-              <Flex key={item.id} direction="column" align="center" className="featured-item-card">
+              <Flex key={item.id} direction="column" align="center" className={styles.featuredItemCard}>
                 <Image 
                   src={getImagePath(item.id)}
                   alt={item.description}
                 />
-                <Text style={{ marginTop: '3%'}} className="featured-item-name">{item.name}</Text>
+                <Text style={{ marginTop: '3%'}} className={styles.featuredItemName}>{item.name}</Text>
               </Flex>
             ))
           )}

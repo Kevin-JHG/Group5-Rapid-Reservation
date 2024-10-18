@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# npm test
+npx lint-staged --allow-empty
+
+# for testing purposes
+# exit 1

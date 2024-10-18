@@ -64,26 +64,42 @@ export const Register = () => {
         <p className={classes.registerSubheading}>Signup to reserve your table today!</p>
 
         <form className={classes.registerForm} onSubmit={handleSubmit(onSubmit)}>
-          <TextInput label="First Name" placeholder="John" {...register('firstName')} />
-          <p className={classes.registerInputError}>{errors.firstName?.message}</p>
+          <TextInput
+            label="First Name"
+            placeholder="John"
+            error={errors.firstName?.message}
+            {...register('firstName')}
+          />
 
-          <TextInput label="Last Name" placeholder="Doe" {...register('lastName')} />
-          <p className={classes.registerInputError}>{errors.lastName?.message}</p>
+          <TextInput label="Last Name" placeholder="Doe" error={errors.lastName?.message} {...register('lastName')} />
 
-          <TextInput type="email" label="Email" placeholder="johndoe@email.com" {...register('email')} />
-          <p className={classes.registerInputError}>{errors.email?.message}</p>
+          <TextInput
+            type="email"
+            label="Email"
+            placeholder="johndoe@email.com"
+            error={errors.email?.message}
+            {...register('email')}
+          />
 
-          <PasswordInput label="Password" placeholder="Your password" {...register('password')} />
-          <p className={classes.registerInputError}>{errors.password?.message}</p>
+          <PasswordInput
+            label="Password"
+            placeholder="Your password"
+            error={errors.password?.message}
+            {...register('password')}
+          />
 
-          <PasswordInput label="Confirm Password" placeholder="Your password" {...register('confirmPassword')} />
-          <p className={classes.registerInputError}>{errors.confirmPassword?.message}</p>
+          <PasswordInput
+            label="Confirm Password"
+            placeholder="Your password"
+            error={errors.confirmPassword?.message}
+            {...register('confirmPassword')}
+          />
 
           <Button type="submit" fullWidth mt={8}>
             Register
           </Button>
 
-          {errors.root && <p className={classes.registerInputError}>{errors.root.message}</p>}
+          {errors.root && <p className={classes.registerError}>{errors.root.message}</p>}
 
           <p className={classes.registerLoginText}>
             Already have an account?{' '}

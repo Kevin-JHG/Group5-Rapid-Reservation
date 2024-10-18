@@ -1,40 +1,36 @@
-.register-form-wrapper {
+.registerFormWrapper {
   max-width: 500px;
-  margin: 0 auto;
+  margin: rem(24px) auto 0 auto;
   padding: 12px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
 
-.register-heading {
+.registerHeading {
   margin: 12px 0 8px 0;
 }
 
-.register-subheading {
+.registerSubheading {
   color: #4b5563;
   margin: 0 0 20px 0;
 }
 
-.register-form {
+.registerForm {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: rem(8px);
 }
 
-.register-button {
-  margin-top: 4px;
-}
-
-.register-login-text {
+.registerLoginText {
   color: #4b5563;
   text-align: center;
 }
 
-.register-login-link {
+.registerLoginLink {
   color: #3b82f6;
 }
 
-.register-input-error {
+.registerInputError {
   margin: 0;
   color: #dc2626;
 }

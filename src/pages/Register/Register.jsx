@@ -6,7 +6,7 @@ import * as yup from 'yup'
 
 import { supabase } from '../../api/supabase'
 
-import './register.css'
+import classes from './Register.module.css'
 
 // schema for register form
 const schema = yup
@@ -59,35 +59,35 @@ export const Register = () => {
 
   return (
     <div>
-      <div className="register-form-wrapper">
-        <h1 className="register-heading">Welcome to Rapid Reservation.</h1>
-        <p className="register-subheading">Signup to reserve your table today!</p>
+      <div className={classes.registerFormWrapper}>
+        <h1 className={classes.registerHeading}>Welcome to Rapid Reservation.</h1>
+        <p className={classes.registerSubheading}>Signup to reserve your table today!</p>
 
-        <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
+        <form className={classes.registerForm} onSubmit={handleSubmit(onSubmit)}>
           <TextInput label="First Name" placeholder="John" {...register('firstName')} />
-          <p className="register-input-error">{errors.firstName?.message}</p>
+          <p className={classes.registerInputError}>{errors.firstName?.message}</p>
 
           <TextInput label="Last Name" placeholder="Doe" {...register('lastName')} />
-          <p className="register-input-error">{errors.lastName?.message}</p>
+          <p className={classes.registerInputError}>{errors.lastName?.message}</p>
 
           <TextInput type="email" label="Email" placeholder="johndoe@email.com" {...register('email')} />
-          <p className="register-input-error">{errors.email?.message}</p>
+          <p className={classes.registerInputError}>{errors.email?.message}</p>
 
           <PasswordInput label="Password" placeholder="Your password" {...register('password')} />
-          <p className="register-input-error">{errors.password?.message}</p>
+          <p className={classes.registerInputError}>{errors.password?.message}</p>
 
           <PasswordInput label="Confirm Password" placeholder="Your password" {...register('confirmPassword')} />
-          <p className="register-input-error">{errors.confirmPassword?.message}</p>
+          <p className={classes.registerInputError}>{errors.confirmPassword?.message}</p>
 
-          <Button type="submit" fullWidth className="register-button">
+          <Button type="submit" fullWidth mt={8}>
             Register
           </Button>
 
-          {errors.root && <p className="register-input-error">{errors.root.message}</p>}
+          {errors.root && <p className={classes.registerInputError}>{errors.root.message}</p>}
 
-          <p className="register-login-text">
+          <p className={classes.registerLoginText}>
             Already have an account?{' '}
-            <Link to="/login" className="register-login-link">
+            <Link to="/login" className={classes.registerLoginLink}>
               Login
             </Link>
           </p>

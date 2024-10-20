@@ -19,3 +19,27 @@
   - Jason: Continue updating the user guides based on recent developments.
  ## Next Meeting:
   - Date: Thursday
+
+# Sprint Meeting Summary
+- Date: Thursday
+- Duration: 18 minutes
+- Attendees: Kevin Hernandez Gaspar, Dalton Perkins, Haley Simmons-Happ, Asra Khalid
+
+## Key Updates:
+  - Login Logic:
+    - Dalton implemented and tested the login logic. It is working as expected with a created user.
+  - Reservation and Menu Logic:
+    - The team discussed how to handle group reservations. They decided that for simplicity, all menu items should be listed in one section, and the individual selection of items for each group member will be handled by the waiter on-site.
+    - Asra will work on the final summary step, which includes displaying the date, time, table number, and ordered menu items.
+  - Notification System:
+    - Jonathan will handle the logic for sending a confirmation email (or app notification) with all reservation and menu order details once the form is submitted.
+  - Wireframes and Documentation:
+    - Haley is working on the wireframes for the reservation and order system, while Jason is updating the user guides based on the features implemented so far.
+  - Next Steps:
+    - Complete the reservation system, including form submission and notification to users.
+    - Finalize and review wireframes and documentation.
+ ## Action Items:
+   - Haley: Continue working on the wireframes for the reservation system and submit them.
+   - Asra: Finalize the summary step for reservations.
+   - Jonathan: Implement the submission logic and notification system.
+   - Jason: Update the user guides and documentation for the new features.

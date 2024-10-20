@@ -26,7 +26,7 @@
    - Password Encryption: User passwords are securely encrypted during storage and transmission.
    - Authentication and Authorization: The system verifies the entered credentials against stored records and grants access to the user's account upon successful login.
    - Error Handling: Displays error messages for incorrect username, email, or password, such as "Invalid email/password" or "Account not found."
-     ![Rapid Reservation Login Page Incorrect Credentials !]([Knowledge-Base(KB)/InvalidLogin.jpg](https://github.com/Kevin-JHG/Group5-Rapid-Reservation/blob/main/Documentation/InvalidLogin.jpg) "Invalid login")
+     ![Rapid Reservation Login Page Incorrect Credentials !]((https://github.com/Kevin-JHG/Group5-Rapid-Reservation/blob/main/Documentation/InvalidLogin.jpg) "Invalid login")
    - Forgot Password Option: Users can recover or reset their password via email if forgotten, ensuring smooth account recovery.
    - Security Features:
      - Protection against brute force attacks by limiting the number of failed login attempts (e.g., account lock after multiple failures).

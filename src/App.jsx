@@ -1,7 +1,10 @@
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { createTheme, MantineProvider } from '@mantine/core'
 
-import { Contact, Home, Login, Menu, Profile, Register, Reservations, NoPage } from './pages'
+import { LoginPage } from './pages/Login/LoginPage'
+import { Contact, Home, Menu, Profile, Register, Reservations, NoPage} from './pages'
+import { ResetPassword } from './pages/ResetPassword/ResetPassword'
+import { GetPasswordReset } from './pages/ResetPassword/GetPasswordReset'
 import { Layout } from './components'
 
 import './App.css'
@@ -47,12 +50,14 @@ function App() {
         <Route path="/" element={<Layout session={session} />}>
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="login" element={<Login />} />
+          <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<Register />} />
           <Route path="menu" element={<Menu />} />
           <Route path="reservations" element={<Reservations />} />
           <Route path="profile" element={<Profile />} />
           <Route path="*" element={<NoPage />} />
+          <Route path="get-password-reset" element={<GetPasswordReset />} />
+          <Route path="reset-password" element={<ResetPassword />} />
         </Route>
       </Routes>
     </MantineProvider>

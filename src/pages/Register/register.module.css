@@ -1,0 +1,44 @@
+.formWrapper {
+  max-width: 31.25rem;
+  margin: 5% auto;
+  padding: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+}
+
+.heading {
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.subheading {
+  color: #4b5563;
+  margin: 0 0 1.25rem 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 8px */
+}
+
+.button {
+  margin-top: 0.25rem;
+}
+
+.loginText {
+  color: #4b5563;
+  text-align: center;
+}
+
+.loginLink {
+  color: #3b82f6;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}
+
+.inputError {
+  margin: 0;
+  color: #dc2626;
+}

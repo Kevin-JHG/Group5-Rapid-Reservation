@@ -4,7 +4,7 @@ function Demo({ name, description, price, id }) {
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder className="flex-row-reverse-container card-container">
       <Card.Section>
-        <Image src={`/${id}.png`} height={100} alt="Norway" />
+        <Image src={`./menu/${id}.png`} height={100} alt="Norway" />
       </Card.Section>{' '}
       <div className="column-center">
         <Group justify="space-between" mt="md" mb="xs">

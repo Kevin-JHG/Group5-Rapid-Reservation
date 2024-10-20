@@ -1,0 +1,39 @@
+.loginFormWrapper {
+  max-width: 31.25rem;
+  margin: 5% auto;
+  padding: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+}
+
+.loginHeading {
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.loginButton {
+  margin-top: 0.25rem;
+}
+
+.loginRegisterText {
+  color: #4b5563;
+  text-align: center;
+}
+
+.loginRegisterLink {
+  color: #3b82f6;
+}
+
+.loginRegisterLink:hover {
+  text-decoration: underline;
+}
+
+.loginInputError {
+  margin: 0;
+  color: #dc2626;
+}

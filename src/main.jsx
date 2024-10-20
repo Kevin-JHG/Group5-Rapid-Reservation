@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 
 import '@mantine/core/styles.css'
-import './index.css'
+import './main.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

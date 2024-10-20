@@ -42,7 +42,7 @@ export const Home = () => {
 
   // Helper function to get image path based on menu item ID
   const getImagePath = (id) => {
-    return `./${id}.png`;
+    return `./menu/${id}.png`;
   };
 
   // Sample customer reviews data

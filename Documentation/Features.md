@@ -16,6 +16,7 @@
    4. Duplicate email or phone numbers should prompt an error message, preventing multiple registrations.
    5. A verification email or SMS should be sent to confirm the registration process.
    6. After successful registration, users are redirected to their account dashboard.
+      ![Rapid Reservation Sign up](RegistrationPage.jpg)
 
 ## Login Functionality
 **Feature Description**: The login functionality enables registered users to securely access their accounts by entering their credentials. This feature ensures that only authorized users can access sensitive functionalities such as reservations, order management, and personal preferences. It also provides error handling for incorrect credentials and supports advanced security measures to protect user data.

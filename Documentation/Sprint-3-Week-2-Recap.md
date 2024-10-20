@@ -43,3 +43,5 @@
    - Asra: Finalize the summary step for reservations.
    - Jonathan: Implement the submission logic and notification system.
    - Jason: Update the user guides and documentation for the new features.
+ ## Next Meeting:
+  - Date: Sunday

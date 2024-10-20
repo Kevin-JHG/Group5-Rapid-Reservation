@@ -1,31 +1,39 @@
-import { Button, Divider } from '@mantine/core';
-import { useNavigate } from 'react-router-dom';
-import classes from './contact.module.css';
-import { IconPhone, IconMail, IconClock } from '@tabler/icons-react';
-import { useEffect } from 'react';
+import { Button, Divider } from '@mantine/core'
+import { useNavigate } from 'react-router-dom'
+import classes from './Contact.module.css'
+import { IconPhone, IconMail, IconClock } from '@tabler/icons-react'
+import { useEffect } from 'react'
 
 export const Contact = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   // Fade in on page load
   useEffect(() => {
-    document.getElementById('contact-container').style.opacity = '1';
-  }, []);
+    document.getElementById('contact-container').style.opacity = '1'
+  }, [])
 
   const handleReserveClick = () => {
-    navigate('/reservations');
-  };
+    navigate('/reservations')
+  }
 
   return (
     <div id="contact-container" className={classes.container}>
       <div className={classes.mainContent}>
         <div className={classes.contactSection}>
           <h1>Contact Us</h1>
-          <p><IconPhone size={16} /> 123-456-7890</p>
+          <p>
+            <IconPhone size={16} /> 123-456-7890
+          </p>
           <Divider className={classes.divider} />
-          <p><IconMail size={16} /> rapidreservation@email.com</p>
+          <p>
+            <IconMail size={16} /> rapidreservation@email.com
+          </p>
           <Divider className={classes.divider} />
-          <p><IconClock size={16} /> Mon-Fri 9am-5pm<br />Sat-Sun 10am-4pm</p>
+          <p>
+            <IconClock size={16} /> Mon-Fri 9am-5pm
+            <br />
+            Sat-Sun 10am-4pm
+          </p>
         </div>
 
         <div className={classes.mapSection}>
@@ -41,7 +49,10 @@ export const Contact = () => {
       <div className={classes.infoSection}>
         <div className={classes.infoText}>
           <h2>About Us</h2>
-          <p>Our mission is to revolutionize reservations. Order ahead when you reserve your table for a seamless dining experience.</p>
+          <p>
+            Our mission is to revolutionize reservations. Order ahead when you reserve your table for a seamless dining
+            experience.
+          </p>
           <Button color="black" className={classes.reserveButton} onClick={handleReserveClick}>
             Reserve
           </Button>
@@ -49,5 +60,5 @@ export const Contact = () => {
         <img className={classes.image} src="./logo.jpg" alt="Reservation" />
       </div>
     </div>
-  );
-};
+  )
+}

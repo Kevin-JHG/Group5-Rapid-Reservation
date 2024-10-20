@@ -12,5 +12,5 @@ The menu is divided into several tabs to make it easy to browse specific categor
   - Alcohol
   - Beverage
 Each tab contains a list of items under that category with pictures, descriptions, and prices.
-![Rapid Reservation Menu Page!](Menu.jpg "Menu Page")
+![Rapid Reservation Menu Page!](menu.jpg "Menu Page")
 ## Menu Tabs Overview

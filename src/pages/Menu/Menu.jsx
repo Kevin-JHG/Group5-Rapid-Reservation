@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState, useRef } from 'react'
 import { supabase } from '../../api/supabase'
-import './menu.css'
-import Demo from './Cards'
+import MenuCard from './MenuCard'
 import { MantineProvider } from '@mantine/core'
+
+import classes from './Menu.module.css'
 
 export const Menu = () => {
   const [menuItems, setMenuItems] = useState([])
@@ -59,28 +60,28 @@ export const Menu = () => {
   const filteredItems = type => menuItems.filter(item => item.type.toLowerCase() === type.toLowerCase())
 
   return (
-    <div className="container">
+    <div className={classes.container}>
       {menuItems.length > 0 ? (
         <>
-          <div className="tabs">
+          <div className={classes.tabs}>
             {tabs.map((tab, index) => (
               <button
                 key={index}
-                className={`tab ${activeTab === index ? 'active' : ''}`}
+                className={`${classes.tab} ${activeTab === index && classes.active}`}
                 onClick={() => scrollToSection(index)}
               >
                 {tab}
               </button>
             ))}
           </div>
-          <div className="menu-sections">
+          <div>
             {tabs.map((tab, index) => (
-              <div key={index} ref={el => (sectionRefs.current[index] = el)} className="menu-section">
+              <div key={index} ref={el => (sectionRefs.current[index] = el)}>
                 <h2>{tab}</h2>
-                <div className="menu-items-grid">
+                <div className={classes.menuItemsGrid}>
                   {filteredItems(tab).map(item => (
                     <MantineProvider key={item.id}>
-                      <Demo name={item.name} description={item.description} price={item.price} id={item.id} />
+                      <MenuCard name={item.name} description={item.description} price={item.price} id={item.id} />
                     </MantineProvider>
                   ))}
                 </div>

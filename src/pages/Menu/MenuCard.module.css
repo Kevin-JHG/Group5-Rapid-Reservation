@@ -1,0 +1,30 @@
+.columnCenter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  padding: 8px 20px;
+}
+
+.menuTitle {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.menuDescription {
+  margin: 0 0 15px 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.menuPrice {
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  color: #2c5282;
+  font-size: 16px;
+}

@@ -1,0 +1,46 @@
+.button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease;
+  border-radius: var(--mantine-radius-sm);
+  padding: var(--mantine-spacing-sm) !important;
+  border: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-8)) !important;
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-8));
+
+  &[data-checked] {
+    border-color: var(--mantine-color-blue-filled);
+    background-color: var(--mantine-color-blue-light);
+  }
+}
+
+.body {
+  flex: 1;
+  margin-left: var(--mantine-spacing-md);
+}
+
+.formWrapper {
+  margin-top: rem(18px);
+  padding: rem(24px);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: rem(4px);
+}
+
+.reservationFields {
+  display: flex;
+  gap: rem(12px);
+}
+
+@media (max-width: 600px) {
+  .reservationFields {
+    flex-direction: column;
+    gap: rem(8px);
+  }
+}
+
+.field {
+  flex-grow: 1;
+  flex-basis: 0;
+}

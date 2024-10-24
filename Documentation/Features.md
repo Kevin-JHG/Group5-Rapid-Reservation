@@ -45,11 +45,9 @@
  - Key Functionalities:
    - Table Availability Display: A real-time, graphical layout of the restaurant’s seating plan shows available tables for the selected date and time.
    - Time Slot Selection: Customers can choose a specific time slot for their reservation based on availability.
-   - Table Selection: Users can select their preferred table from the layout, including information about table capacity and location (e.g., near windows, outdoor seating).
    - Reservation Confirmation: After choosing a time and table, the system displays a summary of the reservation, including the date, time, and table number, for final confirmation.
    - Large Party Reservations: Customers can reserve tables for larger parties by automatically combining multiple tables to accommodate the group.
    - Special Requests: Users can enter specific requests such as dietary restrictions, seating preferences, or special occasions, which will be flagged for staff review.
-   - Modification and Cancellation: Users can modify or cancel their reservations up to a specific time before their booking.
    - Order Placing: User can add their orders while making reservations up to certain party size.
  - Acceptance Criteria:
    1. The user must be able to view available tables on a visual seating layout.

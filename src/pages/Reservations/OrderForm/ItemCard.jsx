@@ -1,30 +1,23 @@
-import { Card, Image, Group, Text, Badge, Button, ActionIcon, NumberInput, Flex } from '@mantine/core'
-import classes from './ItemCard.module.css'
+import { Card, Image, Group, Text, Badge, Button, ActionIcon, NumberInput } from '@mantine/core'
 import PropTypes from 'prop-types'
 import { IconMinus, IconPlus } from '@tabler/icons-react'
 
-const ItemCard = ({ item, itemInCart, setCart }) => {
+import useReservationStore from '../../../state/reservation'
+
+import classes from './ItemCard.module.css'
+
+const ItemCard = ({ item }) => {
+  const itemInCart = useReservationStore(state => state.cart.find(({ id }) => item.id === id))
+  const addCartItem = useReservationStore(state => state.addCartItem)
+  const incrementQuantity = useReservationStore(state => state.incrementQuantity)
+  const decrementQuantity = useReservationStore(state => state.decrementQuantity)
+
   const handleAddToCart = () => {
-    setCart(state => [...state, { id: item.id, quantity: 1 }])
+    addCartItem(item.id)
   }
 
-  const incrementQty = () =>
-    setCart(state => {
-      return state.map(itm => (itm.id === itemInCart.id ? { ...itemInCart, quantity: itm.quantity + 1 } : itm))
-    })
-
-  // const findItemInCart = items =>
-
-  const decrementQty = () =>
-    setCart(state => {
-      // remove item in cart before quantity hits 0
-      const item = state.find(itm => itm.id === itemInCart.id)
-      if (item.quantity === 1) {
-        return state.filter(itm => itm.id !== itemInCart.id)
-      }
-
-      return state.map(itm => (itm.id === itemInCart.id ? { ...itemInCart, quantity: itm.quantity - 1 } : itm))
-    })
+  const handleIncrement = () => incrementQuantity(item.id)
+  const handleDecrement = () => decrementQuantity(item.id)
 
   return (
     <Card key={item.id} className={`${classes.itemCard} ${itemInCart && classes.itemActive}`} shadow="sm" withBorder>
@@ -60,12 +53,12 @@ const ItemCard = ({ item, itemInCart, setCart }) => {
               fw={600}
               value={itemInCart.quantity}
               leftSection={
-                <ActionIcon color="dark" onClick={decrementQty}>
+                <ActionIcon color="dark" onClick={handleDecrement}>
                   <IconMinus />
                 </ActionIcon>
               }
               rightSection={
-                <ActionIcon color="dark" onClick={incrementQty}>
+                <ActionIcon color="dark" onClick={handleIncrement}>
                   <IconPlus />
                 </ActionIcon>
               }

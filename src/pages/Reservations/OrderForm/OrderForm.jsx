@@ -1,20 +1,13 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '../../../api/supabase'
 import { Title, Text, Divider, Loader } from '@mantine/core'
 
-import classes from './OrderForm.module.css'
 import ItemCard from './ItemCard'
+import { supabase } from '../../../api/supabase'
 
-// Order Items: List items & allow user to pick quantities of them. Show subtotal, tax, and total cost.
+import classes from './OrderForm.module.css'
+
 const OrderForm = () => {
-  // TODO: make this global state so only fetched once
   const [menuItems, setMenuItems] = useState(null)
-
-  // TODO: remove sample data
-  const [cart, setCart] = useState([
-    { id: 20, quantity: 2 },
-    { id: 2, quantity: 3 },
-  ])
 
   const itemTypes = ['Appetizer', 'Beverage', 'Entree', 'Alcohol', 'Dessert']
 
@@ -36,15 +29,7 @@ const OrderForm = () => {
 
   return (
     <div>
-      {/* 
-        Cards of menu items: Image, price, add to cart button
-        - Separate into secitons based on category
-        - When item added, highlight border & replace add to cart button with quantity - <qty> + buttons
-
-        Order summary (list of items & quantities)
-
-        IF ORDER IS TAKE-OUT: user must have at least one item in cart
-      */}
+      {/* TODO: IF ORDER IS TAKE-OUT: user must have at least one item in cart */}
 
       <Title order={2} mt="lg" ta="center">
         Order menu items
@@ -69,13 +54,7 @@ const OrderForm = () => {
 
           <div className={classes.itemsGrid}>
             {itemCategory?.items.map(item => (
-              <ItemCard
-                key={item.id}
-                item={item}
-                itemInCart={cart.find(({ id }) => item.id === id)}
-                cart={cart}
-                setCart={setCart}
-              />
+              <ItemCard key={item.id} item={item} />
             ))}
           </div>
         </div>

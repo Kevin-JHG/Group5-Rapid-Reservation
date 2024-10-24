@@ -46,8 +46,8 @@ export const Reservations = () => {
         <Stepper.Completed>Reservation Confirmed! You should receive an email.</Stepper.Completed>
       </Stepper>
 
-      <Group justify="center" mt="xl">
-        <Button variant="default" onClick={prevStep}>
+      <Group justify="center" mt="xl" mb="xl">
+        <Button variant="default" onClick={prevStep} disabled={active === 0}>
           Back
         </Button>
         <Button onClick={handleNextStep}>Next step</Button>

@@ -42,6 +42,7 @@
 
 ## Reservation
 **Feature Description**:The reservation feature allows customers to view available tables, select a preferred time slot, and book a table in advance at the restaurant. This feature provides a smooth and interactive experience with a visual seating layout, enabling customers to make informed decisions about their seating preferences. Additionally, the feature also customers to place order their orders in advance.
+![Rapid Reservation Reservation Page](Pictures/Reservation.jpg)
  - Key Functionalities:
    - Table Availability Display: A real-time, graphical layout of the restaurant’s seating plan shows available tables for the selected date and time.
    - Time Slot Selection: Customers can choose a specific time slot for their reservation based on availability.

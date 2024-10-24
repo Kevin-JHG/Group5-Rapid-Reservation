@@ -7,6 +7,7 @@ import ReservationForm from './ReservationForm/ReservationForm'
 import OrderForm from './OrderForm/OrderForm'
 
 import classes from './Reservations.module.css'
+import Summary from './Summary/Summary'
 
 export const Reservations = () => {
   const [active, setActive] = useState(0)
@@ -55,7 +56,7 @@ export const Reservations = () => {
           description="Reservation summary"
           icon={<IconReceipt style={{ width: rem(20), height: rem(20) }} />}
         >
-          Show reservation & order summary from first two steps. Use local storage so that reservation/order gets saved?
+          <Summary />
         </Stepper.Step>
         <Stepper.Completed>Reservation Confirmed! You should receive an email.</Stepper.Completed>
       </Stepper>

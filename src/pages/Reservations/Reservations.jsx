@@ -1,16 +1,29 @@
 import { useState } from 'react'
 import { Stepper, Button, Group, rem } from '@mantine/core'
+import { IconCalendar, IconCircleCheck, IconReceipt, IconToolsKitchen3 } from '@tabler/icons-react'
+import { useMediaQuery } from '@mantine/hooks'
+
+import ReservationForm from './ReservationForm/ReservationForm'
+import OrderForm from './OrderForm/OrderForm'
 
 import classes from './Reservations.module.css'
-import { IconCalendar, IconCircleCheck, IconReceipt, IconToolsKitchen3 } from '@tabler/icons-react'
-import ReservationForm from './ReservationForm/ReservationForm'
 
 export const Reservations = () => {
   const [active, setActive] = useState(0)
 
+  const matches = useMediaQuery('(max-width: 630px)')
+
   const prevStep = () => setActive(current => (current > 0 ? current - 1 : current))
+  const nextStep = () => setActive(current => (current < 3 ? current + 1 : current))
+
   const handleNextStep = () => {
-    setActive(current => (current < 3 ? current + 1 : current))
+    if (active === 0) {
+      // TODO: validation needed
+      // - All inputs required & are right type
+      // - Check that reservation date / time is in the future
+      // - Check that a table is available @ that time & date (DB function?)
+      nextStep()
+    }
   }
 
   return (
@@ -19,6 +32,7 @@ export const Reservations = () => {
         active={active}
         onStepClick={setActive}
         completedIcon={<IconCircleCheck style={{ width: rem(24), height: rem(24) }} />}
+        orientation={matches ? 'vertical' : 'horizontal'}
       >
         <Stepper.Step
           label="Reservation"

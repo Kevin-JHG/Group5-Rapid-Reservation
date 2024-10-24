@@ -1,0 +1,5 @@
+.pageContainer {
+  max-width: rem(948px);
+  margin: 0 auto;
+  padding: rem(32px) rem(16px) 0 rem(16px);
+}

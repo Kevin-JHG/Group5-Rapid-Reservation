@@ -1,0 +1,25 @@
+.itemsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: rem(18px);
+}
+
+@media (max-width: 916px) {
+  .itemsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .itemsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.loaderContainer {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

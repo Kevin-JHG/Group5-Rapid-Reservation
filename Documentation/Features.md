@@ -20,6 +20,7 @@
 
 ## Login Functionality
 **Feature Description**: The login functionality enables registered users to securely access their accounts by entering their credentials. This feature ensures that only authorized users can access sensitive functionalities such as reservations, order management, and personal preferences. It also provides error handling for incorrect credentials and supports advanced security measures to protect user data.
+![Rapid Reservation Login](Pictures/updated-login.jpg)
  - Key Functionalities:
    - Username/Email Input: Users can log in using their registered username or email address.
    - Password Input: Users must provide a valid password to authenticate.

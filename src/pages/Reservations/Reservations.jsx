@@ -34,7 +34,7 @@ export const Reservations = () => {
           // TODO: don't allow step select until table is found OR "take out" is selected?
           // allowStepSelect={false}
         >
-          Order Items: List items & allow user to pick quantities of them. Show subtotal, tax, and total cost.
+          <OrderForm />
         </Stepper.Step>
         <Stepper.Step
           label="Summary"

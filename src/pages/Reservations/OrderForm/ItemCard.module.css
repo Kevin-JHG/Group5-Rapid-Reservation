@@ -1,0 +1,25 @@
+.itemCard {
+  padding: rem(12px);
+}
+
+@media (max-width: 680px) {
+  .itemCard {
+    padding: rem(12px);
+  }
+}
+
+.itemActive {
+  border: 2px solid #3b82f6 !important;
+  background-color: #dbeafe !important;
+}
+
+.cartButtonContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: rem(12px);
+}
+
+.cartButton {
+  flex: 1 !important;
+}

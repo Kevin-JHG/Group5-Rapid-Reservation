@@ -7,10 +7,10 @@
  ### Mockups:
   - Database Schema:
     - Dalton presented the initial database schema, which includes users, profiles, orders, menu items, and tables. Kevin and the team reviewed and approved the structure.
-      ![Rapid Reservation Diagram](Rapid-Reservation-Diagram.jpg)
+      ![Rapid Reservation Diagram](Pictures/Rapid-Reservation-Diagram.jpg)
   - Current Progress:
     - Kevin has started implementing basic components for the menu UI, user profile, user registration, and Supabase integration.
-      ![Rapid Reservation Landing page](LandingPageProgress.jpeg)
+      ![Rapid Reservation Landing page](Pictures/LandingPageProgress.jpeg)
     - Haley is working on detailed mockups for the user registration, login, and menu pages. She will also create a user profile mockup, as it was missing, and plans to have it completed by tonight or tomorrow afternoon.
   - Component Development:
     - Team members are encouraged to work on components using hardcoded data while Dalton finalizes the database and Supabase API setup.

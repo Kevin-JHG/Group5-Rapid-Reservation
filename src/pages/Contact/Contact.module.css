@@ -4,7 +4,8 @@
   align-items: center;
   padding: 1%;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  user-select: none;
+  animation: fadeInSlideUp 1.5s ease;
 }
 
 .mainContent {
@@ -26,7 +27,6 @@
   border: 0.1rem solid #ddd;
   border-radius: 0.75rem;
   box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
-  animation: fadeInSlideUp 1s ease;
 }
 
 .mapSection {
@@ -34,7 +34,6 @@
   max-width: 45%;
   text-align: center;
   height: auto;
-  animation: fadeInSlideUp 1.5s ease;
 }
 
 .map {
@@ -56,7 +55,6 @@
   padding: 2%;
   border-radius: 0.75rem;
   box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
-  animation: fadeInSlideUp 1.5s ease;
 }
 
 .infoText {
@@ -76,6 +74,12 @@
 .reserveButton {
   margin-top: 8%;
   animation: pulse 1.5s infinite;
+  transition: 0.3s ease;
+}
+
+.reserveButton:hover {
+  scale: 1.2;
+  animation: none;
 }
 
 .divider {

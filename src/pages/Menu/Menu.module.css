@@ -4,6 +4,8 @@
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
+  user-select: none;
+  animation: fadeInSlideUp 1.5s ease;
 }
 
 .tabs {
@@ -41,5 +43,16 @@
 @media (max-width: 568px) {
   .menuItemsGrid {
     grid-template-columns: 1fr; /* Single column for mobile devices */
+  }
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

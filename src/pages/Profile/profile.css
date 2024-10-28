@@ -1,128 +1,75 @@
-/* PROFILE PAGE CSS BEGINS */
-
-/* Profile Container Styles */
-#ProfileContainer {
-    display: flex;
-    flex-direction: column;
-    /* Stack fields vertically */
-    align-items: center;
-    /* Center fields */
-    margin: 2% auto;
-    /* Center the container */
-    width: 50%;
-    /* Adjust width as needed */
+.profileFormWrapper {
+    max-width: 31.25rem;
+    margin: 5% auto;
+    padding: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.25rem;
 }
 
-/* Styles for Labels and Fields */
-.ProfileField {
-    display: flex;
-    justify-content: space-between;
-    /* Align labels and fields */
-    width: 100%;
-    /* Take full container width */
-    margin-bottom: 1.5%;
-    /* Space between fields */
-}
-
-.ProfileField label {
-    font-weight: bold;
-    margin-right: 1%;
-    /* Space between label and field */
-}
-
-/* Styles for Input Fields */
-.ProfileInput {
-    color: #000000;
-    background-color: #ffffff;
-    border: 1.5px solid #000000;
-    border-radius: 6.5px;
-    /* Rounded corners */
-    padding: 0.5% 1%;
-    /* Padding for input fields */
-    width: 70%;
-    /* Adjust field width */
-}
-
-.ProfileInput:focus {
-    border-color: #E6E6E3;
-    /* Highlight border on focus */
-    outline: none;
-    transition-duration: 0.3s;
-    /* Smooth transition for focus */
-}
-
-/* Styles for Buttons */
-.ProfileButton {
-    color: #ffffff;
-    background-color: #000000;
-    border: 1.5px solid #000000;
-    border-radius: 6.5px;
-    /* Rounded corners */
-    padding: 0.5% 2%;
-    /* Padding for buttons */
-    margin-left: 1%;
-    /* Space between buttons */
-}
-
-.ProfileButton:hover {
-    background-color: #E6E6E3;
-    /* Change background on hover */
-    color: #000000;
-    /* Change text color on hover */
-    box-shadow: 0 6px 10px 0 #0000003d, 0 8px 20px 0 #00000030;
-    /* Shadow effect */
-    cursor: pointer;
-    /* Pointer cursor on hover */
-    transition-duration: 0.4s;
-    /* Smooth transition */
-}
-
-/* Heading Style */
-#ProfileHeading {
+.profileHeading {
+    margin: 0.75rem 0 0.5rem 0;
     font-size: x-large;
-    margin-bottom: 2%;
-    /* Space below heading */
     text-align: center;
 }
 
-/* PROFILE PAGE CSS ENDS */
-
-/* Media Queries for Responsive Design -TABLETS- */
-@media (max-width: 990px) {
-    #ProfileContainer {
-        width: 75%;
-        /* Adjust container width */
-    }
-
-    .ProfileInput {
-        width: 65%;
-        /* Adjust input width */
-    }
-
-    #ProfileHeading {
-        font-size: large;
-    }
+.profileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
 }
 
-/* Media Queries for Responsive Design -PHONES- */
-@media (max-width: 576px) {
-    #ProfileContainer {
-        width: 90%;
-        /* Further adjust container width */
-    }
+.profileField {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
 
-    .ProfileInput {
-        width: 60%;
-        /* Further adjust input width */
-    }
+.profileLabel {
+    font-weight: bold;
+}
 
-    .ProfileButton {
-        font-size: 10px;
-        padding: 1%;
-        /* Adjust padding for smaller screens */
-    }
+.profileInput {
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    width: 70%;
+}
 
-    #ProfileHeading {
-        font-size: medium;
-    }
+.profileInput:focus {
+    border-color: #E6E6E3;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.profileButton {
+    color: #ffffff;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+.profileButton:hover {
+    background-color: #E6E6E3;
+    color: #000000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.profileMessage {
+    color: #4b5563;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.profileError {
+    color: #dc2626;
+    text-align: center;
+    margin-top: 0.5rem;
 }

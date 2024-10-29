@@ -29,3 +29,26 @@
   - Roger: Complete user profile management.
  ## Next Meeting:
   - Date: Thursday
+
+# Sprint Meeting Summary
+- Date: Thursday
+- Duration: 23 minutes
+- Attendees: Kevin Hernandez Gaspar, Dalton Perkins, Asra Khalid, Jason Lee, JP Asfoury
+
+## Key Updates:
+  - Ongoing Tasks:
+    - Jason is working on the technical documentation for the reservation system.
+    - Roger (absent) is expected to complete the user profile management.
+    - Kevin and Dalton discussed implementing additional animations and UI transitions to enhance user experience, focusing on elements like error pages, sign-up buttons, and menu item linking.
+  - Menu and Navigation:
+    - <b>Menu Navigation</b>: The team discussed adding IDs to menu items to enable direct links to specific items. Options include either linking directly to items or using modal pop-ups for item details.
+    - <b>User Orders</b>: Team considered displaying the user’s order history on their profile page, utilizing the existing "orders" table in the database.
+  - Design and CSS:
+    - Dalton updated CSS to enhance the professionalism of the user interface, incorporating modules and additional styling elements.
+ ## Action Items:
+   - Roger: Finalize user profile management functionality.
+   - Kevin: Implement menu item linking or modal functionality for improved navigation.
+   - Jason: Continue documenting the reservation flow.
+   - Team: Complete all tasks within this week’s sprint and prepare for next week’s review.
+ ## Next Meeting:
+  - Date: Tuesday

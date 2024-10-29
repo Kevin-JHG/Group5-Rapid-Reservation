@@ -47,7 +47,8 @@
    - Dine-in/Take-out Availability: User will be presented with the option on a dine-in or take-out reservation.
    - Table Availability Display: A real-time, graphical layout of the restaurant’s seating plan shows available tables for the selected date and time.
    - Time Slot Selection: Customers can choose a specific time slot for their reservation based on availability.
-   - Reservation Confirmation: After choosing a time and table, the system displays a summary of the reservation, including the date, time, and table number, for final confirmation.
+   - Reservation Confirmation: After choosing a time, the system displays a summary of the reservation, including the date, time, and party size, for final confirmation.
+     ![Rapid Reservation Summary Page](Pictures/summary-reservation-1.png)
    - Large Party Reservations: Customers can reserve tables for larger parties by automatically combining multiple tables to accommodate the group.(Party size capacity: 10)
    - Special Requests: Users can enter specific requests such as dietary restrictions, seating preferences, or special occasions, which will be flagged for staff review.
    - Order Placing: User can add their orders while making reservations up to party size of 10.

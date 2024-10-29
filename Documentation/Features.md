@@ -57,4 +57,5 @@
    2. The system should allow users to select a time slot and reserve a specific table.
    3. After completing the reservation, the system should display a confirmation screen with all details.
    4. The system should allow users to modify or cancel their reservation.
-   5. Special requests should be captured during the reservation process and flagged for staff.
+      ![Rapid Reservation Confirm Page](Pictures/confirm.png)
+   6. Special requests should be captured during the reservation process and flagged for staff.

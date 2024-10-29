@@ -67,3 +67,16 @@
     transform: scale(1);
   }
 }
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+  .buttonPairContainer {
+    scale: 0.75;
+  }
+
+  .loginButton {
+    scale: 0.75;
+  }
+
+  /* In progress */
+}

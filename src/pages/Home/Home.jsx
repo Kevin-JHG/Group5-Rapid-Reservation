@@ -81,7 +81,7 @@ export const Home = () => {
 
   return (
     <div className={styles.homePageContainer}>
-      <Flex justify="center" style={{ width: '100%', marginTop: '3%' }} gap="md">
+      <Flex className={styles.buttonPairContainer} justify="center" style={{ width: '100%', marginTop: '3%' }} gap="md">
         <Button variant="outline" color="dark" onClick={handleReserve} radius="md" size="xl">
           RESERVE
         </Button>

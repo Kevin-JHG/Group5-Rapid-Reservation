@@ -86,7 +86,7 @@ export const Layout = ({ session, setSession }) => {
             )}
           </Group>
 
-          <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" color="white" />
+          <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
         </Group>
       </header>
 

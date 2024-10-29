@@ -3,7 +3,6 @@
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
   border-bottom: 0.0625rem solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
-  background-color: #000000;
   animation: fadeIn 2.5s ease;
   user-select: none;
 }
@@ -16,31 +15,46 @@
   /* company name next to logo */
   p {
     font-family: 'Playfair Display', serif;
-    color: #fff;
     font-weight: bold;
     font-size: 1.25rem;
   }
 }
 
 .navLink {
+  position: relative;
   display: flex;
   align-items: center;
   height: 99%;
   padding: 0.75rem;
-  transition: background-color 0.3s ease;
-  color: #fff;
   cursor: pointer;
+  overflow: hidden;
 
   &:hover {
-    background: linear-gradient(to top, #949494, transparent);
+    background: linear-gradient(to top, #e0e0e0, transparent);
   }
+}
+
+.navLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, #e0e0e0, transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.navLink:hover::before {
+  opacity: 1;
 }
 
 .activeNavLink {
   position: relative;
   font-weight: bold;
   height: 99%;
-  background: linear-gradient(to top, #949494, transparent);
+  background: linear-gradient(to top, #e0e0e0, transparent);
 }
 
 .navIcon {
@@ -50,25 +64,12 @@
 .drawer {
   user-select: none;
 
-  .logoLink {
-    p {
-      color: #000000;
-    }
-  }
-
-  .navLink {
-    color: #000000;
-    &:hover {
-      background: linear-gradient(#9494947e, transparent);
-    }
+  .navLink:hover {
+    background: linear-gradient(#f1f1f1, transparent);
   }
 
   .activeNavLink {
-    background: linear-gradient(#9494947e, transparent);
-  }
-
-  .navIcon {
-    color: #000000;
+    background: linear-gradient(#f1f1f1, transparent);
   }
 }
 

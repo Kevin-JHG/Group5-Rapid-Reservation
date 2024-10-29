@@ -1,4 +1,4 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 
 const useReservationStore = create(set => ({
   orderType: 'reservation',
@@ -24,16 +24,26 @@ const useReservationStore = create(set => ({
   decrementQuantity: id =>
     set(state => {
       // remove item in cart before quantity hits 0
-      const item = state.cart.find(itm => itm.id === id)
+      const item = state.cart.find(itm => itm.id === id);
       if (item.quantity === 1) {
-        return { ...state, cart: state.cart.filter(itm => itm.id !== id) }
+        return { ...state, cart: state.cart.filter(itm => itm.id !== id) };
       }
 
       return {
         ...state,
         cart: state.cart.map(itm => (itm.id === id ? { ...itm, quantity: itm.quantity - 1 } : itm)),
-      }
+      };
     }),
-}))
+  // update cart with new quantities
+  updateCart: newQuantities =>
+    set(state => {
+      const updatedCart = state.cart.map(item => ({
+        ...item,
+        quantity: newQuantities[item.id] || 0,
+      })).filter(item => item.quantity > 0);
 
-export default useReservationStore
+      return { ...state, cart: updatedCart };
+    }),
+}));
+
+export default useReservationStore;

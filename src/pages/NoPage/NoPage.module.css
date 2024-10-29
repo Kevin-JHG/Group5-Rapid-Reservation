@@ -1,0 +1,51 @@
+.noPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  user-select: none;
+  animation: fadeInSlideUp 1s ease;
+}
+
+.imageWrapper {
+  max-width: 80%;
+}
+
+.errorImage {
+  width: 100%;
+  height: auto;
+}
+
+.backButton {
+  animation: pulse 1.5s infinite;
+  transition: 0.3s ease;
+}
+
+.backButton:hover {
+  scale: 1.2;
+  animation: none;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

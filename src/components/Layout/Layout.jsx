@@ -8,32 +8,29 @@ import { supabase } from '../../api/supabase'
 import classes from './Layout.module.css'
 
 /* eslint-disable react/prop-types */
-const LogoLink = ({ onClick }) => {
-  return (
-    <NavLink to="/" className={classes.logoLink} onClick={onClick ? onClick : null}>
-      <img src="/logo_transparent.png" alt="Logo" width="72px" height="72px" />
-      <p>Rapid Reservation</p>
-    </NavLink>
-  )
-}
+const LogoLink = ({ onClick }) => (
+  <NavLink to="/" className={classes.logoLink} onClick={onClick}>
+    <img src="/logo_transparent.png" alt="Logo" width="72px" height="72px" />
+    <p>Rapid Reservation</p>
+  </NavLink>
+)
 
 export const Layout = ({ session, setSession }) => {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false)
-  const [logoutModalOpened, { open: openLogoutModal, close: closeLogoutModal }] = useDisclosure(false);
+  const [logoutModalOpened, { open: openLogoutModal, close: closeLogoutModal }] = useDisclosure(false)
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  // Function to handle log out
   const handleLogout = async () => {
-    closeLogoutModal();
-    navigate('/'); // Redirect user to home page on logout
+    closeLogoutModal()
+    navigate('/')
     try {
-      await supabase.auth.signOut();
-      setSession(null); // Clear session after logout
+      await supabase.auth.signOut()
+      setSession(null)
     } catch (error) {
-      console.error("Logout failed:", error.message);
+      console.error('Logout failed:', error.message)
     }
-  };
+  }
 
   return (
     <>
@@ -42,16 +39,25 @@ export const Layout = ({ session, setSession }) => {
           <LogoLink />
 
           <Group h="100%" gap={0} visibleFrom="sm">
-            <NavLink to="/" className={classes.navLink}>
+            <NavLink to="/" className={({ isActive }) => `${classes.navLink} ${isActive ? classes.activeNavLink : ''}`}>
               Home
             </NavLink>
-            <NavLink to="/reservations" className={classes.navLink}>
+            <NavLink
+              to="/reservations"
+              className={({ isActive }) => `${classes.navLink} ${isActive ? classes.activeNavLink : ''}`}
+            >
               Reservations
             </NavLink>
-            <NavLink to="/menu" className={classes.navLink}>
+            <NavLink
+              to="/menu"
+              className={({ isActive }) => `${classes.navLink} ${isActive ? classes.activeNavLink : ''}`}
+            >
               Menu
             </NavLink>
-            <NavLink to="/contact" className={classes.navLink}>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => `${classes.navLink} ${isActive ? classes.activeNavLink : ''}`}
+            >
               Contact
             </NavLink>
           </Group>
@@ -64,7 +70,9 @@ export const Layout = ({ session, setSession }) => {
                     Profile
                   </Button>
                 </NavLink>
-                <Button color="red" onClick={openLogoutModal} style={{ marginLeft: '0.1rem' }}>Log out</Button>
+                <Button color="red" onClick={openLogoutModal} style={{ marginLeft: '0.1rem' }}>
+                  Log out
+                </Button>
               </>
             ) : (
               <>
@@ -86,56 +94,81 @@ export const Layout = ({ session, setSession }) => {
         <p>Are you sure you want to log out?</p>
         <Center>
           <Group position="right" mt="md">
-              <Button onClick={closeLogoutModal} variant="default">Cancel</Button>
-              <Button color="red" onClick={handleLogout}>Yes, log out</Button>
+            <Button onClick={closeLogoutModal} variant="filled" color="blue">
+              Cancel
+            </Button>
+            <Button color="red" onClick={handleLogout}>
+              Yes, log out
+            </Button>
           </Group>
         </Center>
       </Modal>
 
-
-      {/* Mobile nav drawer */}
       <Drawer
         opened={drawerOpened}
         onClose={closeDrawer}
         size="100%"
         padding="md"
         title={<LogoLink onClick={closeDrawer} />}
+        className={classes.drawer}
         hiddenFrom="sm"
         zIndex={1000000}
       >
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
           <Divider my="sm" />
 
-          <NavLink to="/" className={classes.navLink} onClick={closeDrawer}>
+          <NavLink
+            to="/"
+            className={({ isActive }) => `${classes.navLink} ${isActive ? classes.activeNavLink : ''}`}
+            onClick={closeDrawer}
+          >
             <IconHome size={18} className={classes.navIcon} />
             Home
           </NavLink>
-          <NavLink to="/reservations" className={classes.navLink} onClick={closeDrawer}>
+          <NavLink
+            to="/reservations"
+            className={({ isActive }) => `${classes.navLink} ${isActive ? classes.activeNavLink : ''}`}
+            onClick={closeDrawer}
+          >
             <IconCalendar size={18} className={classes.navIcon} />
             Reservations
           </NavLink>
-          <NavLink to="/menu" className={classes.navLink} onClick={closeDrawer}>
+          <NavLink
+            to="/menu"
+            className={({ isActive }) => `${classes.navLink} ${isActive ? classes.activeNavLink : ''}`}
+            onClick={closeDrawer}
+          >
             <IconToolsKitchen2 size={18} className={classes.navIcon} />
             Menu
           </NavLink>
-          <NavLink to="/contact" className={classes.navLink} onClick={closeDrawer}>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => `${classes.navLink} ${isActive ? classes.activeNavLink : ''}`}
+            onClick={closeDrawer}
+          >
             <IconAddressBook size={18} className={classes.navIcon} />
             Contact
           </NavLink>
+
           {session && (
             <>
-              <NavLink to="/profile" className={classes.navLink} onClick={closeDrawer}>
+              <NavLink
+                to="/profile"
+                className={({ isActive }) => `${classes.navLink} ${isActive ? classes.activeNavLink : ''}`}
+                onClick={closeDrawer}
+              >
                 <IconUser size={18} className={classes.navIcon} />
                 Profile
               </NavLink>
               <Center>
-                <Button 
-                  color="red" 
+                <Button
+                  color="red"
                   onClick={() => {
-                    closeDrawer(); // Close the drawer
-                    openLogoutModal(); // Open the logout modal
-                  }} 
-                  style={{ marginTop: '1rem', width: '90%' }}>
+                    closeDrawer()
+                    openLogoutModal()
+                  }}
+                  style={{ marginTop: '1rem', width: '90%' }}
+                >
                   Log out
                 </Button>
               </Center>

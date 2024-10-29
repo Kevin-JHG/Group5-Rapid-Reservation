@@ -3,7 +3,7 @@ import classes from './MenuCard.module.css'
 
 function MenuCard({ name, description, price, id }) {
   return (
-    <MantineCard shadow="sm" padding="lg" radius="md" withBorder>
+    <MantineCard className={classes.mantineCard} shadow="sm" padding="lg" radius="md" withBorder>
       <MantineCard.Section>
         <Image src={`./menu/${id}.png`} height={200} alt="Norway" />
       </MantineCard.Section>{' '}

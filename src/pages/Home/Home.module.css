@@ -1,4 +1,9 @@
 /* Home.module.css */
+.homePageContainer {
+  user-select: none;
+  animation: fadeInSlideUp 1.5s ease;
+}
+
 .featuredItemCard {
   position: relative;
   overflow: hidden;
@@ -6,9 +11,11 @@
 }
 
 .featuredItemCard:hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   transform: translateY(5%);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.5);
 }
 
 .featuredItemCard img {
@@ -17,15 +24,59 @@
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-  user-select: none;
 }
 
 .featuredItemName {
   font-weight: 600;
   text-align: center;
-  user-select: none;
 }
 
 .featuredItemCard:hover img {
   transform: scale(1.05);
+}
+
+.loginButton {
+  animation: pulse 1.5s ease-in-out infinite;
+  transition: 0.3s ease;
+}
+
+.loginButton:hover {
+  scale: 1.2;
+  animation: none;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+  .buttonPairContainer {
+    scale: 0.75;
+  }
+
+  .loginButton {
+    scale: 0.75;
+  }
+
+  /* In progress */
 }

@@ -1,9 +1,10 @@
 .header {
-  height: rem(72px);
+  height: 4.5rem;
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
-  border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
-  /* background-color: #171717; */
+  border-bottom: 0.0625rem solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  animation: fadeIn 2.5s ease;
+  user-select: none;
 }
 
 .logoLink {
@@ -13,25 +14,70 @@
 
   /* company name next to logo */
   p {
-    /* font-family: 'Playfair Display', serif; */
-    color: #171717;
+    font-family: 'Playfair Display', serif;
     font-weight: bold;
-    font-size: rem(20px);
+    font-size: 1.25rem;
   }
 }
 
 .navLink {
+  position: relative;
   display: flex;
   align-items: center;
-  height: 100%;
-  padding: rem(12px) rem(12px);
-  color: #171717;
+  height: 99%;
+  padding: 0.75rem;
+  cursor: pointer;
+  overflow: hidden;
 
-  @mixin hover {
-    background-color: #f5f5f5;
+  &:hover {
+    background: linear-gradient(to top, #e0e0e0, transparent);
   }
 }
 
+.navLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, #e0e0e0, transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.navLink:hover::before {
+  opacity: 1;
+}
+
+.activeNavLink {
+  position: relative;
+  font-weight: bold;
+  height: 99%;
+  background: linear-gradient(to top, #e0e0e0, transparent);
+}
+
 .navIcon {
-  margin-right: rem(8px);
+  margin-right: 0.5rem;
+}
+
+.drawer {
+  user-select: none;
+
+  .navLink:hover {
+    background: linear-gradient(#f1f1f1, transparent);
+  }
+
+  .activeNavLink {
+    background: linear-gradient(#f1f1f1, transparent);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

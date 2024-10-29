@@ -5,26 +5,54 @@ import { useMediaQuery } from '@mantine/hooks'
 
 import ReservationForm from './ReservationForm/ReservationForm'
 import OrderForm from './OrderForm/OrderForm'
+import Summary from './Summary/Summary'
+
+import useReservationStore from './../../state/reservation'
 
 import classes from './Reservations.module.css'
-import Summary from './Summary/Summary'
 
 export const Reservations = () => {
   const [active, setActive] = useState(0)
+  const [modalOpened, setModalOpened] = useState(false)
 
   const matches = useMediaQuery('(max-width: 630px)')
+
+  const reservationState = useReservationStore(state => state.reservation)
+  const cart = useReservationStore(state => state.cart)
+
+  const isReservationComplete = () => {
+    // Check if all required reservation fields are filled
+    return reservationState.date && reservationState.time && reservationState.partySize > 0
+  }
+
+  const isOrderComplete = () => {
+    // Check if at least one item is in the cart
+    return cart.length > 0
+  }
+
+  const isStepComplete = (step) => {
+    switch (step) {
+      case 0:
+        return isReservationComplete()
+      case 1:
+        return isOrderComplete()
+      default:
+        return true
+    }
+  }
 
   const prevStep = () => setActive(current => (current > 0 ? current - 1 : current))
   const nextStep = () => setActive(current => (current < 3 ? current + 1 : current))
 
   const handleNextStep = () => {
-    if (active === 0) {
-      // TODO: validation needed
-      // - All inputs required & are right type
-      // - Check that reservation date / time is in the future
-      // - Check that a table is available @ that time & date (DB function?)
+    if (isStepComplete(active)) {
       nextStep()
     }
+  }
+
+  const handleConfirmReservation = () => {
+    setModalOpened(true)
+    // Logic to confirm the reservation goes here
   }
 
   return (
@@ -46,8 +74,6 @@ export const Reservations = () => {
           label="Order"
           description="Order items"
           icon={<IconToolsKitchen3 style={{ width: rem(20), height: rem(20) }} />}
-          // TODO: don't allow step select until table is found OR "take out" is selected?
-          // allowStepSelect={false}
         >
           <OrderForm />
         </Stepper.Step>
@@ -56,7 +82,7 @@ export const Reservations = () => {
           description="Reservation summary"
           icon={<IconReceipt style={{ width: rem(20), height: rem(20) }} />}
         >
-          <Summary />
+          <Summary setModalOpened={setModalOpened} modalOpened={modalOpened} setActive={setActive} />
         </Stepper.Step>
         <Stepper.Completed>Reservation Confirmed! You should receive an email.</Stepper.Completed>
       </Stepper>
@@ -65,7 +91,13 @@ export const Reservations = () => {
         <Button variant="default" onClick={prevStep} disabled={active === 0}>
           Back
         </Button>
-        <Button onClick={handleNextStep}>Next step</Button>
+        {active === 2 ? (
+          <Button onClick={handleConfirmReservation}>Confirm Reservation</Button>
+        ) : (
+          <Button onClick={handleNextStep} disabled={!isStepComplete(active)}>
+            Next step
+          </Button>
+        )}
       </Group>
     </div>
   )

@@ -1,3 +1,124 @@
 .summaryWrapper {
   border: 1px solid rgba(0, 0, 0, 0.1);
+}.summaryContainer {
+  background-color: #dbeafe;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.title {
+  color: #343a40;
+}
+
+.subtitle {
+  color: #6c757d;
+}
+
+.orderType {
+  font-size: 20px;
+  color: #1d4ed8;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  color: #2563eb;
+  margin-top: 20px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1e40af;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #bfdbfe;
+  gap: 10px;
+}
+
+.itemDetails {
+  flex: 1;
+}
+
+.itemName {
+  margin: 0;
+  color: #1e40af;
+}
+
+.itemDescription {
+  margin: 0;
+  color: #4b5563;
+}
+
+.itemPrice {
+  color: #15803d;
+  font-weight: bold;
+}
+
+.totalPrice {
+  text-align: right;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #1e40af;
+}
+
+.emptyCart {
+  text-align: center;
+  color: #6b7280;
+}
+
+.modalTitle {
+  color: #343a40;
+  text-align: center;
+  font-weight: 700;
+}
+
+.modalSubtitle {
+  color: #343a40;
+  font-weight: 600;
+}
+
+.modalListItem {
+  background-color: #dbeafe;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.modalItemDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.modalItemImage {
+  border-radius: 8px;
+}
+
+.modalItemName {
+  font-weight: 500;
+  color: #343a40;
+}
+
+.modalItemDescription {
+  color: #6c757d;
+}
+
+.modalTotalItem {
+  background-color: #dbeafe;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.placeOrderButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }

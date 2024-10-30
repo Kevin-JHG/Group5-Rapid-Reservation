@@ -1,6 +1,9 @@
 #User Guide for the Reservation Feature
-## Reservation
-**Feature Description**:The reservation feature allows customers to view available tables, select a preferred time slot, and book a table in advance at the restaurant. This feature provides a smooth and interactive experience with a visual seating layout, enabling customers to make informed decisions about their seating preferences. Additionally, the feature also customers to place order their orders in advance.
+
+Welcome to the Rapid Reservation system! This guide will walk you through using the reservation page to seamlessly book a table at our restaurant. With real-time table availability, time slot selection, and the option to place orders in advance, our reservation system provides a smooth, interactive experience.
+## Accessing the Reservation Page
+On the reservation page, you can:
+  - Select the Order
 ![Rapid Reservation Reservation Page](Documentation/Pictures/Reservation.jpg)
  - Key Functionalities:
    - Dine-in/Take-out Availability: User will be presented with the option on a dine-in or take-out reservation.

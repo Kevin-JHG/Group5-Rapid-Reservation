@@ -18,11 +18,14 @@ export const Reservations = () => {
   const matches = useMediaQuery('(max-width: 630px)')
 
   const reservationState = useReservationStore(state => state.reservation)
+  const orderType = useReservationStore(state => state.orderType)
   const cart = useReservationStore(state => state.cart)
 
   const isReservationComplete = () => {
     // Check if all required reservation fields are filled
-    return reservationState.date && reservationState.time && reservationState.partySize > 0
+    return (
+      orderType === 'take-out' || (reservationState.date && reservationState.time && reservationState.partySize > 0)
+    )
   }
 
   const isOrderComplete = () => {
@@ -30,7 +33,7 @@ export const Reservations = () => {
     return cart.length > 0
   }
 
-  const isStepComplete = (step) => {
+  const isStepComplete = step => {
     switch (step) {
       case 0:
         return isReservationComplete()

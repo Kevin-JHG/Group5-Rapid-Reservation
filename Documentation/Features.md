@@ -62,7 +62,7 @@
   
 ## Employee Dashboard Feature
 **Feature Description**: The Employee Dashboard serves as a centralized hub for restaurant staff to manage reservations, view and track orders, update table availability, and monitor special requests. This dashboard is tailored to support various roles, including hosts, kitchen staff, and managers, by providing tools to streamline daily operations, improve service efficiency, and maintain real-time communication with customers.
-
+![Rapid Reservation Login](Pictures/EmployeeDashMobile.jpg)
  - Key Functionalities:
    - Reservation Management: Staff can view upcoming reservations in a list or calendar format, with details including customer names, party sizes, reservation times, and assigned tables. Filters by date and time allow easy access to specific reservations.
    - Order Tracking and Status Updates: Displays all pre-orders linked to reservations, categorized by table and time. Staff can mark orders as "In Progress" or "Completed," ensuring efficient kitchen operations and timely service.

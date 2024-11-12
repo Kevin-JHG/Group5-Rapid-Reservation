@@ -3,3 +3,12 @@
   margin: 0 auto;
   padding: rem(32px) rem(16px) 0 rem(16px);
 }
+
+.error {
+  color: #ef4444;
+  text-align: center;
+  background-color: #fee2e2;
+  margin-top: 8px;
+  padding: rem(4px) 0;
+  border-radius: 2px;
+}

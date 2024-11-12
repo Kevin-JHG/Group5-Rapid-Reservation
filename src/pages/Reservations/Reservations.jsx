@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Stepper, Button, Group, rem } from '@mantine/core'
 import { IconCalendar, IconCircleCheck, IconReceipt, IconToolsKitchen3 } from '@tabler/icons-react'
 import { useMediaQuery } from '@mantine/hooks'
@@ -10,16 +10,26 @@ import Summary from './Summary/Summary'
 import useReservationStore from './../../state/reservation'
 
 import classes from './Reservations.module.css'
+import { checkTableAvail } from '../../api/order'
+import { DateTime } from 'luxon'
 
 export const Reservations = () => {
   const [active, setActive] = useState(0)
   const [modalOpened, setModalOpened] = useState(false)
+  const [error, setError] = useState(null)
 
   const matches = useMediaQuery('(max-width: 630px)')
 
   const reservationState = useReservationStore(state => state.reservation)
   const orderType = useReservationStore(state => state.orderType)
   const cart = useReservationStore(state => state.cart)
+
+  const setReservation = useReservationStore(state => state.setReservation)
+
+  // when reservation state changes, clear error message
+  useEffect(() => {
+    setError(null)
+  }, [reservationState])
 
   const isReservationComplete = () => {
     // Check if all required reservation fields are filled
@@ -47,7 +57,45 @@ export const Reservations = () => {
   const prevStep = () => setActive(current => (current > 0 ? current - 1 : current))
   const nextStep = () => setActive(current => (current < 3 ? current + 1 : current))
 
-  const handleNextStep = () => {
+  const createReservationDateTime = () => {
+    let reservationDateTime = DateTime.fromJSDate(reservationState.date)
+
+    // add time (hours) to date time
+    const [timeStr, meridiem] = reservationState.time.split(' ')
+    const [hours, minutes] = timeStr.split(':')
+
+    if (meridiem === 'PM' && hours !== '12') {
+      reservationDateTime = reservationDateTime.set({ hour: Number(hours) + 12, minute: Number(minutes) })
+    } else {
+      reservationDateTime = reservationDateTime.set({ hour: Number(hours), minute: Number(minutes) })
+    }
+
+    return reservationDateTime
+  }
+
+  const handleNextStep = async () => {
+    // check if reservation is available & create reservation if so
+    if (active === 0 && !reservationState.tableId && orderType === 'reservation') {
+      const reservationDateTime = createReservationDateTime()
+
+      try {
+        // check if reservation is available
+        const availTableId = await checkTableAvail(reservationState.partySize, reservationDateTime)
+
+        // if table available, set table id (for creating order & order items)
+        if (availTableId) {
+          setReservation({ tableId: availTableId })
+        } else {
+          // set error message, saying reservation isn't available
+          setError('No tables available for this reservation.')
+          return
+        }
+      } catch (error) {
+        console.log(error)
+        return
+      }
+    }
+
     if (isStepComplete(active)) {
       nextStep()
     }
@@ -89,6 +137,8 @@ export const Reservations = () => {
         </Stepper.Step>
         <Stepper.Completed>Reservation Confirmed! You should receive an email.</Stepper.Completed>
       </Stepper>
+
+      {error && <p className={classes.error}>{error}</p>}
 
       <Group justify="center" mt="xl" mb="xl">
         <Button variant="default" onClick={prevStep} disabled={active === 0}>

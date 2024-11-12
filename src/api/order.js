@@ -5,12 +5,31 @@ export const insertOrder = async (type, table_id, startDateTime) => {
   // get current user id
   const user_id = await getSessionUserId()
 
+  if (type === 'reservation') {
+    type = 'dine-in'
+  } else {
+    type = 'to-go'
+  }
+
   // create order in `order` table
-  const { error: insertOrderError } = await supabase
+  const { data, error: insertOrderError } = await supabase
     .from('order')
     .insert({ user_id, table_id, date: startDateTime ? startDateTime.toSQL() : null, type })
+    .select()
 
   if (insertOrderError) throw insertOrderError
+
+  return data
+}
+
+export const insertOrderItems = async (items, orderId) => {
+  const formattedItems = items.map(item => ({ order_id: orderId, menu_item_id: item.id, quantity: item.quantity }))
+
+  const { data, error } = await supabase.from('order_item').insert(formattedItems).select()
+
+  if (error) throw error
+
+  return data
 }
 
 export const checkTableAvail = async (partySize, startDateTime) => {

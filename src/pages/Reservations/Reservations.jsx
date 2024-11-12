@@ -40,7 +40,11 @@ export const Reservations = () => {
 
   const isOrderComplete = () => {
     // Check if at least one item is in the cart
-    return cart.length > 0
+    if (orderType === 'take-out' && cart.length === 0) {
+      return false
+    }
+
+    return true
   }
 
   const isStepComplete = step => {
@@ -126,7 +130,7 @@ export const Reservations = () => {
           description="Order items"
           icon={<IconToolsKitchen3 style={{ width: rem(20), height: rem(20) }} />}
         >
-          <OrderForm />
+          <OrderForm nextStep={handleNextStep} prevStep={prevStep} isStepComplete={() => isStepComplete(active)} />
         </Stepper.Step>
         <Stepper.Step
           label="Summary"

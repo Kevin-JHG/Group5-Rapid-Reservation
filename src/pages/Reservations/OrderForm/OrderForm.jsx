@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Title, Text, Divider, Loader } from '@mantine/core'
+import { Title, Text, Divider, Loader, Group, Button } from '@mantine/core'
 
 import ItemCard from './ItemCard'
 import { supabase } from '../../../api/supabase'
 
 import classes from './OrderForm.module.css'
 
-const OrderForm = () => {
+const OrderForm = ({ nextStep, prevStep, isStepComplete }) => {
   const [menuItems, setMenuItems] = useState(null)
 
   const itemTypes = ['Appetizer', 'Beverage', 'Entree', 'Alcohol', 'Dessert']
@@ -29,14 +29,21 @@ const OrderForm = () => {
 
   return (
     <div>
-      {/* TODO: IF ORDER IS TAKE-OUT: user must have at least one item in cart */}
-
       <Title order={2} mt="lg" ta="center">
         Order menu items
       </Title>
       <Text c="dimmed" mt="sm" ta="center">
         Select the items you&apos;d like to order, they&apos;ll be ready when you arive!
       </Text>
+
+      <Group justify="center" mt="xl" mb="xl">
+        <Button variant="default" onClick={prevStep}>
+          Back
+        </Button>
+        <Button onClick={nextStep} disabled={!isStepComplete()}>
+          Next step
+        </Button>
+      </Group>
 
       {!menuItems && (
         <div className={classes.loaderContainer}>

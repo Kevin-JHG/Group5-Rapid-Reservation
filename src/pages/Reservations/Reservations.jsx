@@ -137,7 +137,12 @@ export const Reservations = () => {
           description="Reservation summary"
           icon={<IconReceipt style={{ width: rem(20), height: rem(20) }} />}
         >
-          <Summary setModalOpened={setModalOpened} modalOpened={modalOpened} setActive={setActive} />
+          <Summary
+            setModalOpened={setModalOpened}
+            modalOpened={modalOpened}
+            setActive={setActive}
+            createReservationDateTime={createReservationDateTime}
+          />
         </Stepper.Step>
         <Stepper.Completed>Reservation Confirmed! You should receive an email.</Stepper.Completed>
       </Stepper>

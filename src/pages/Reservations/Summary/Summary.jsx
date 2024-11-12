@@ -28,13 +28,15 @@ import useReservationStore from '../../../state/reservation'
 import { supabase } from '../../../api/supabase'
 import classes from './Summary.module.css'
 import { useMantineTheme } from '@mantine/core'
+import { checkTableAvail, insertOrder, insertOrderItems } from '../../../api/order'
 
-const Summary = ({ setModalOpened, modalOpened, setActive }) => {
+const Summary = ({ setModalOpened, modalOpened, setActive, createReservationDateTime }) => {
   const {
     orderType,
-    reservation: { date, time, partySize },
+    reservation: { date, time, partySize, tableId },
     cart,
     updateCart,
+    setReservation,
   } = useReservationStore(state => state)
 
   const [menuDetails, setMenuDetails] = useState(null)
@@ -102,9 +104,44 @@ const Summary = ({ setModalOpened, modalOpened, setActive }) => {
     })
   }
   const theme = useMantineTheme()
-  const handleConfirmation = () => {
-    console.log('Reservation confirmed!')
-    setModalOpened(false)
+
+  const handleConfirmation = async () => {
+    if (cart.length === 0 && orderType === 'take-out') {
+      // TODO: set error message: 'Take-out orders must have items to order. Go back and add items to your cart.'
+      return
+    }
+
+    const reservationDateTime = createReservationDateTime()
+
+    try {
+      if (orderType === 'reservation') {
+        // check if table is still available
+        const newTableId = await checkTableAvail(partySize, reservationDateTime)
+
+        if (newTableId) {
+          // set table id again in reservation state
+          setReservation({ tableId: newTableId })
+        } else {
+          // TODO: set error message that table isn't available
+          // show message under place order button
+          return
+        }
+      }
+
+      // insert order into `order` table
+      const orderData = await insertOrder(orderType, tableId, reservationDateTime)
+      console.log(orderData)
+
+      // if any items in cart, insert them into `order_item` table
+      if (cart.length > 0) {
+        const orderItemsData = await insertOrderItems(cart, orderData[0].id)
+        console.log(orderItemsData)
+      }
+
+      // TODO: close modal & route to confirmation page (with order id in url)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (

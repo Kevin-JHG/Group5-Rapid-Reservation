@@ -1,2 +1,2 @@
 # Contact Page
-ContactUs.jpg
+![Rapid Reservation Contact Page!](KB-Pictures/ContactUs.jpg)

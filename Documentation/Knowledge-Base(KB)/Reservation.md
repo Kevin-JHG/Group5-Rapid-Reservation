@@ -1,4 +1,4 @@
-#User Guide for the Reservation Feature
+# User Guide for the Reservation Feature
 
 Welcome to the Rapid Reservation system! This guide will walk you through using the reservation page to seamlessly book a table at our restaurant. With real-time table availability, time slot selection, and the option to place orders in advance, our reservation system provides a smooth, interactive experience.
 ## Accessing the Reservation Page

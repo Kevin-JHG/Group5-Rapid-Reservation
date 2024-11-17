@@ -4,7 +4,7 @@ Welcome to the Rapid Reservation system! This guide will walk you through using 
 ## Accessing the Reservation Page
 On the reservation page, you can:
   - Select the Order
-![Rapid Reservation Reservation Page](Documentation/Pictures/Reservation.jpg)
+![Rapid Reservation Reservation Page](Reservation.jpg)
  - Key Functionalities:
    - Dine-in/Take-out Availability: User will be presented with the option on a dine-in or take-out reservation.
    - Table Availability Display: A real-time, graphical layout of the restaurant’s seating plan shows available tables for the selected date and time.

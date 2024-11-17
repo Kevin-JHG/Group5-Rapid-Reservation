@@ -22,3 +22,4 @@ A. Appetizer
       - Image of the dish.
       - Description detailing ingredients or preparation style.
       - Price for each item.
+![Rapid Reservation Menu Page!](Appetizer-update.jpg "Appetizer")

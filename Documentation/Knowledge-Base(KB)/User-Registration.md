@@ -4,7 +4,7 @@ This guide walks you through the process of registering a new user account for R
 ## Step-by-Step Instructions for User Registration
 1. Navigate to the Registration Page
   - Open your web browser and go to the restaurant’s website.
-  - On the homepage, click on the "Login/Sign Up" button or "Register" option located on the navigation bar at top.
+  - On the homepage, click on the "Login/Sign Up" button or "Sign up" option located on the navigation bar at top.
     ![Rapid Reservation Register Page!](KB-Pictures/LandingPage_Progress.jpeg "Register Page")
 2. Enter Personal Information
   - On the registration form, you will be asked to provide the following details:

@@ -10,9 +10,9 @@ On the reservation page, you can:
  - Key Functionalities:
    - Dine-in/Take-out Availability: User will be presented with the option on a dine-in or take-out reservation.
    - Time Slot Selection: Customers can choose a specific time slot for their reservation based on availability.
+   - Order Placing: User can add their orders while making reservations up to party size of 10.
    - Reservation Confirmation: After choosing a time, the system displays a summary of the reservation, including the date, time, and party size, for final confirmation.
      ![Rapid Reservation Summary Page](Summary.jpg)
-   - Order Placing: User can add their orders while making reservations up to party size of 10.
  - Acceptance Criteria:
    1. The user must be able to view available tables on a visual seating layout.
    2. The system should allow users to select a time slot and reserve a specific table.

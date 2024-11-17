@@ -23,3 +23,6 @@ A. Appetizer, Dessert, Entree, Alcohol, Beverage
       - Description detailing ingredients or preparation style.
       - Price for each item.
 ![Rapid Reservation Menu Page!](KB-Pictures/Appetizer-update.jpg "Appetizer")
+
+## Contact Support
+If you encounter any issues during the Menu viewing process or need further assistance, please contact our customer support team at rapidreservation@email.com or call 123-456-7890.

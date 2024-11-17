@@ -13,29 +13,11 @@ This guide walks you through the process of registering a new user account for R
     - Password: Create a strong password with at least 8 characters, including a combination of letters, numbers, and symbols.
     - Confirm Password: Re-enter the password to ensure it matches.
       ![Rapid Reservation Sign up](KB-Pictures/RegistrationPage.jpg)
-3. Agree to Terms and Conditions
-  - Review the platform’s Terms of Service and Privacy Policy.
-  - Check the box that confirms you agree to these terms before proceeding.
-4. Complete CAPTCHA (if applicable)
-  - You may be asked to complete a CAPTCHA to verify that you are not a robot. Follow the on-screen instructions to pass the CAPTCHA.
-5. Submit the Registration
+3. Submit the Registration
   - Once all fields are filled out correctly, click the “Register” or “Sign Up” button at the bottom of the form.
-6. Verify Your Email (or Phone Number)
-  - After submitting the form, you will receive a verification email or SMS, depending on the information you provided during registration.
-    - Email Verification:
-      - Check your inbox for a confirmation email.
-      - Click on the verification link within the email to activate your account.
-    - SMS Verification (if applicable):
-      - If you opted for SMS verification, you will receive a text message with a verification code.
-      - Enter the code on the verification page to complete the process.
-7. Login to Your Account
+4. Login to Your Account
   - Once verified, return to the website’s login page.
-  - Enter your registered email/phone number and password to log in.
-8. Optional: Complete Your Profile
-  - After logging in, you may be prompted to set up your profile further. This includes adding:
-    - Dietary Preferences: (e.g., vegan, gluten-free)
-    - Seating Preferences: (e.g., window seat, outdoor dining)
-    - Notification Preferences: Choose whether you prefer to receive updates via email or SMS.
+  - Enter your registered email and password to log in.
 ## Troubleshooting Common Issues
 
 **I didn’t receive the verification email/SMS**

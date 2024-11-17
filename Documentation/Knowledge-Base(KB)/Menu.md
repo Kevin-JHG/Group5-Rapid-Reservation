@@ -12,7 +12,7 @@ The menu is divided into several tabs to make it easy to browse specific categor
   - Alcohol
   - Beverage
 Each tab contains a list of items under that category with pictures, descriptions, and prices.
-![Rapid Reservation Menu Page!](menu.jpg "Menu Page")
+![Rapid Reservation Menu Page!](KB-Pictures/menu.jpg "Menu Page")
 ## Menu Tabs Overview
 A. Appetizer, Dessert, Entree, Alcohol, Beverage
   - What to Expect: This section showcases the restaurant’s food options available for order.
@@ -22,4 +22,4 @@ A. Appetizer, Dessert, Entree, Alcohol, Beverage
       - Image of the dish.
       - Description detailing ingredients or preparation style.
       - Price for each item.
-![Rapid Reservation Menu Page!](Appetizer-update.jpg "Appetizer")
+![Rapid Reservation Menu Page!](KB-Pictures/Appetizer-update.jpg "Appetizer")

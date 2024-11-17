@@ -1,0 +1,37 @@
+.pageContainer {
+  animation: fadeInSlideUp 1.5s ease;
+}
+
+.notification {
+  animation: slideInSlideOut 7s ease forwards;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInSlideOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+}

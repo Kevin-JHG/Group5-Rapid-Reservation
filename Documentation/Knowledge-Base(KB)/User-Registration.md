@@ -18,29 +18,13 @@ This guide walks you through the process of registering a new user account for R
 4. Login to Your Account
   - Once verified, return to the website’s login page.
   - Enter your registered email and password to log in.
-## Troubleshooting Common Issues
-
-**I didn’t receive the verification email/SMS**
-  - Check your spam/junk folder: The verification email may have been filtered.
-  - Resend the verification email: On the registration page, there should be an option to resend the verification link or SMS.
-  - Ensure correct email/phone number: Double-check that the details you entered during registration are correct.
-**My password doesn’t meet the strength requirements**
-  - Ensure your password:
-    - Is at least 8 characters long.
-    - Contains at least one uppercase letter, one lowercase letter, one number, and one special character (e.g., @, #, $, !).
-**I received an error message saying “Email/Phone Number already in use”**
-  - This error means that the email or phone number you’re trying to register with is already linked to an existing account.
-    - Solution: Try resetting the password for that account or use a different email/phone number.
       
 ## FAQs
-1. Is it mandatory to provide my phone number during registration?
-No, providing a phone number is optional. However, it may be necessary for two-factor authentication or receiving SMS notifications for your reservations and orders.
-
-2. Can I change my email or phone number after registering?
+1. Can I change my email or phone number after registering?
 Yes, you can update your email or phone number by visiting your account settings after logging in.
 
-3. What should I do if I forget my password?
+2. What should I do if I forget my password?
 If you forget your password, click on the "Forgot Password" link on the login page. You will receive an email or SMS to reset your password.
 
 ## Contact Support
-If you encounter any issues during the registration process or need further assistance, please contact our customer support team at rapidr-support@rreservation.com or call 1-800-123-4567.
+If you encounter any issues during the registration process or need further assistance, please contact our customer support team at rapidreservation@email.com or call 123-456-7890.

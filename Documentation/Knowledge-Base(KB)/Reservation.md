@@ -20,3 +20,6 @@ On the reservation page, you can:
    4. The system should allow users to modify or cancel their reservation.
       ![Rapid Reservation Confirm Page](KB-Pictures/Confirm.jpg)
    6. Special requests should be captured during the reservation process and flagged for staff.
+
+## Contact Support
+If you encounter any issues during the reservation process or need further assistance, please contact our customer support team at rapidreservation@email.com or call 123-456-7890.

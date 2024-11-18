@@ -8,7 +8,7 @@ const OrderModal = ({ opened, close, order }) => {
   }
 
   return (
-    <Modal opened={opened} onClose={close} title={'Order #' + order.id} centered>
+    <Modal opened={opened} onClose={close} title={order ? `Order # ${order.id}` : 'Unknown Order'} centered>
       {order && (
         <>
           <Select

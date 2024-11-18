@@ -81,6 +81,10 @@ export const Profile = () => {
     navigate('/get-password-reset')
   }
 
+  const handleDashboard = () => {
+    navigate('/dashboard')
+  }
+
   return (
     <div className={styles.pageContainer} style={{ maxWidth: '40rem', margin: '3% auto', userSelect: 'none' }}>
       <Paper align="center" withBorder shadow="xl" radius="md" p="md">
@@ -145,6 +149,9 @@ export const Profile = () => {
 
         <Button color="black" style={{ width: '75%' }} mt="1rem" onClick={handlePasswordReset}>
           Reset Password
+        </Button>
+        <Button color="black" style={{ width: '75%' }} mt="1rem" onClick={handleDashboard}>
+          Dashboard
         </Button>
       </Paper>
 

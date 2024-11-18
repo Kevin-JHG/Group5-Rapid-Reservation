@@ -14,7 +14,7 @@ export const insertOrder = async (type, table_id, startDateTime) => {
   // create order in `order` table
   const { data, error: insertOrderError } = await supabase
     .from('order')
-    .insert({ user_id, table_id, date: startDateTime ? startDateTime.toSQL() : null, type })
+    .insert({ user_id, table_id, date: startDateTime ? startDateTime.toSQL() : null, type, profile_id: user_id })
     .select()
 
   if (insertOrderError) throw insertOrderError

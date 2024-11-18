@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../api/supabase'
-import { Table, Title } from '@mantine/core'
+import { Select, Table, Title } from '@mantine/core'
 import { DateTime } from 'luxon'
 import OrderModal from './OrderModal'
 import { useDisclosure } from '@mantine/hooks'
@@ -78,6 +78,10 @@ export const Dashboard = () => {
       <Title order={2} mt="lg" ta="center">
         Dashboard
       </Title>
+
+      <div style={{ width: 'fit-content' }}>
+        <Select label="Filter orders" defaultValue="All" data={['All', 'Dine-in', 'Take-out', 'Acitve']} />
+      </div>
 
       <Table mt="lg">
         <Table.Thead>

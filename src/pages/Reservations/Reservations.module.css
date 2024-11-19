@@ -2,6 +2,7 @@
   max-width: rem(948px);
   margin: 0 auto;
   padding: rem(32px) rem(16px) 0 rem(16px);
+  animation: fadeInSlideUp 1.5s ease;
 }
 
 .error {
@@ -11,4 +12,28 @@
   margin-top: 8px;
   padding: rem(4px) 0;
   border-radius: 2px;
+}
+
+.notLoggedIn {
+  max-width: 45rem;
+  margin: 5% auto;
+  padding: 0.75rem;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 1.25rem;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInSlideUp 1.5s ease;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -9,6 +9,19 @@ export const Home = () => {
   const [featuredItems, setFeaturedItems] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  // Check if user is logged in
+  useEffect(() => {
+    const fetchUser = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
+      setIsLoggedIn(!!user)
+    }
+
+    fetchUser()
+  }, [])
 
   useEffect(() => {
     const fetchMenuItems = async () => {
@@ -131,16 +144,18 @@ export const Home = () => {
       </Flex>
 
       <Flex justify="center">
-        <Button
-          className={styles.loginButton}
-          color="dark"
-          onClick={handleLogin}
-          radius="md"
-          size="xl"
-          style={{ marginBottom: '3%' }}
-        >
-          LOGIN / SIGN UP
-        </Button>
+        {!isLoggedIn && (
+          <Button
+            className={styles.loginButton}
+            color="dark"
+            onClick={handleLogin}
+            radius="md"
+            size="xl"
+            style={{ marginBottom: '3%' }}
+          >
+            LOGIN / SIGN UP
+          </Button>
+        )}
       </Flex>
 
       <Title align="center" order={2} style={{ userSelect: 'none' }}>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Stepper, Button, Group, rem } from '@mantine/core'
+import { Stepper, Button, Group, rem, Text, Flex } from '@mantine/core'
 import { IconCalendar, IconCircleCheck, IconReceipt, IconToolsKitchen3 } from '@tabler/icons-react'
 import { useMediaQuery } from '@mantine/hooks'
 
@@ -13,6 +13,9 @@ import classes from './Reservations.module.css'
 import { checkTableAvail } from '../../api/order'
 import { DateTime } from 'luxon'
 
+import { supabase } from '../../api/supabase'
+import { useNavigate } from 'react-router-dom'
+
 export const Reservations = () => {
   const [active, setActive] = useState(0)
   const [modalOpened, setModalOpened] = useState(false)
@@ -25,6 +28,34 @@ export const Reservations = () => {
   const cart = useReservationStore(state => state.cart)
 
   const setReservation = useReservationStore(state => state.setReservation)
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const navigate = useNavigate()
+  const [loading, setLoading] = useState(true)
+
+  // Check if user is logged in
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const {
+          data: { user },
+          error,
+        } = await supabase.auth.getUser()
+        if (error) throw error
+        setIsLoggedIn(!!user)
+      } catch (err) {
+        console.error('Failed to fetch user:', err.message)
+        setIsLoggedIn(false)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchUser()
+  }, [])
+
+  const handleLoginRedirect = () => navigate('/login')
+  const handleSignUpRedirect = () => navigate('/register')
 
   // when reservation state changes, clear error message
   useEffect(() => {
@@ -108,6 +139,28 @@ export const Reservations = () => {
   const handleConfirmReservation = () => {
     setModalOpened(true)
     // Logic to confirm the reservation goes here
+  }
+
+  if (loading) {
+    return null
+  }
+
+  if (!isLoggedIn) {
+    return (
+      <form className={classes.notLoggedIn}>
+        <Text size="xl" weight={900} color="red">
+          Please log in or create an account to make a reservation.
+        </Text>
+        <Group>
+          <Button mt="xl" onClick={handleSignUpRedirect}>
+            Create Account
+          </Button>
+          <Button mt="xl" onClick={handleLoginRedirect}>
+            Login
+          </Button>
+        </Group>
+      </form>
+    )
   }
 
   return (

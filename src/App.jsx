@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom'
 import { createTheme, MantineProvider } from '@mantine/core'
 
 import { LoginPage } from './pages/Login/LoginPage'
@@ -19,30 +19,34 @@ function App() {
   const location = useLocation()
 
   useEffect(() => {
-    // returns current session if there is one (refreshes token if expired)
+    // Get the current session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session)
     })
 
-    // watches for changes in authentication state
+    // Watch for changes in authentication state
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
       const { pathname } = location
 
-      setSession(session)
-
-      // if user isn't logged in, don't allow navigation to certain pages
       if (session !== null) {
-        // this will automatically re-route user to home page when they login
+        // Redirect logged-in users from login/register
         if (pathname === '/login' || pathname === '/register') {
           navigate('/')
+        }
+      } else {
+        // Prevent unauthorized access to protected routes
+        const protectedRoutes = ['/profile', '/dashboard']
+        if (protectedRoutes.includes(pathname)) {
+          navigate('/login')
         }
       }
     })
 
     return () => subscription.unsubscribe()
-  }, [])
+  }, [location, navigate])
 
   return (
     <MantineProvider theme={theme}>
@@ -50,15 +54,15 @@ function App() {
         <Route path="/" element={<Layout session={session} />}>
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="register" element={<Register />} />
           <Route path="menu" element={<Menu />} />
           <Route path="reservations" element={<Reservations />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="*" element={<NoPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<Register />} />
+          <Route path="profile" element={session ? <Profile /> : <Navigate to="/login" />} />
+          <Route path="dashboard" element={session ? <Dashboard /> : <Navigate to="/login" />} />
           <Route path="get-password-reset" element={<GetPasswordReset />} />
           <Route path="reset-password" element={<ResetPassword />} />
+          <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
     </MantineProvider>

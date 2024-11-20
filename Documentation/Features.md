@@ -6,7 +6,6 @@
    - Input Fields: Users must provide essential details, including name, email, phone number, and password.
    - Password Validation: The system enforces password strength by requiring a combination of letters, numbers, and special characters.
    - Email Validation: The system checks for a valid email format and ensures it is not already in use.
-   - Phone Number Validation: A valid phone number format is required, with optional two-factor authentication for security.
    - Unique Account Creation: The system ensures that each email and phone number is associated with only one account.
    - Confirmation: Upon successful registration, users receive a confirmation email or SMS to verify their account.
  - Acceptance Criteria:

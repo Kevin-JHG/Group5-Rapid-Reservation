@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <style>
+    .noPageContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      user-select: none;
+      animation: fadeInSlideUp 1s ease;
+    }
+
+    .imageWrapper {
+      max-width: 40%;
+    }
+
+    .errorImage {
+      width: 100%;
+      height: auto;
+    }
+
+    .backButton {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      animation: pulse 1.5s infinite;
+      transition: 0.3s ease;
+    }
+
+    .backButton:hover {
+      transform: scale(1.2);
+      animation: none;
+    }
+
+    @keyframes fadeInSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(1.25rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="noPageContainer">
+    <div class="imageWrapper">
+      <img src="./public/page_not_found.png" alt="404" class="errorImage">
+    </div>
+    <button class="backButton" onclick="handleBackToHome()">Go Back Home</button>
+  </div>
+
+  <script>
+    function handleBackToHome() {
+      window.location.href = '/';
+    }
+  </script>
+</body>
+</html>

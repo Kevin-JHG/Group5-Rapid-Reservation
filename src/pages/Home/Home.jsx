@@ -93,7 +93,7 @@ export const Home = () => {
   ]
 
   return (
-    <div className={styles.homePageContainer}>
+    <Flex className={styles.homePageContainer}>
       <Flex className={styles.buttonPairContainer} justify="center" style={{ width: '100%', marginTop: '3%' }} gap="md">
         <Button variant="outline" color="dark" onClick={handleReserve} radius="md" size="xl">
           RESERVE
@@ -214,6 +214,6 @@ export const Home = () => {
           ))}
         </Flex>
       </Flex>
-    </div>
+    </Flex>
   )
 }

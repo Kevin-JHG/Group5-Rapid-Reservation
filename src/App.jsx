@@ -58,8 +58,8 @@ function App() {
           <Route path="reservations" element={<Reservations />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<Register />} />
-          <Route path="profile" element={session ? <Profile /> : <Navigate to="/login" />} />
-          <Route path="dashboard" element={session ? <Dashboard /> : <Navigate to="/login" />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="get-password-reset" element={<GetPasswordReset />} />
           <Route path="reset-password" element={<ResetPassword />} />
           <Route path="*" element={<NoPage />} />

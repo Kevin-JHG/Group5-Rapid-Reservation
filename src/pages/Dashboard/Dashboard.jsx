@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react'
 import { supabase } from '../../api/supabase'
 import { Select, Table, Title } from '@mantine/core'
 import { DateTime } from 'luxon'
-import OrderModal from './OrderModal'
 import { useDisclosure } from '@mantine/hooks'
+
+import OrderModal from './OrderModal'
+
+import classes from './Dashboard.module.css'
 
 export const Dashboard = () => {
   const [orders, setOrders] = useState([])
@@ -72,7 +75,7 @@ export const Dashboard = () => {
   ))
 
   return (
-    <div>
+    <div className={classes.pageContainer}>
       <Title order={2} mt="lg" ta="center">
         Dashboard
       </Title>

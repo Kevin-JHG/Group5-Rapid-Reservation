@@ -1,0 +1,28 @@
+.modalTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: rem(24px);
+  font-weight: bolder;
+}
+
+.sectionHeading {
+  margin: rem(16px) 0 rem(8px) 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: rem(20px);
+}
+
+.orderDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.orderKey {
+  font-weight: 500;
+}
+
+.orderValue {
+  color: #3f3f46;
+}

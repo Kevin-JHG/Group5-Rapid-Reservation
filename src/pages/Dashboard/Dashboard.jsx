@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react'
 import { supabase } from '../../api/supabase'
 import { Select, Table, Title } from '@mantine/core'
 import { DateTime } from 'luxon'
-import OrderModal from './OrderModal'
 import { useDisclosure } from '@mantine/hooks'
+
+import OrderModal from './OrderModal'
+
+import classes from './Dashboard.module.css'
 
 export const Dashboard = () => {
   const [orders, setOrders] = useState([])
@@ -12,19 +15,17 @@ export const Dashboard = () => {
 
   // derived state for order modal
   const modalOrder = modalOrderId && orders.length !== 0 ? orders.find(order => order.id === modalOrderId) : null
-  console.log(modalOrder)
 
   useEffect(() => {
     const getOrders = async () => {
-      // TODO: add this to select string after fixing roles:
-      // profile (
-      //   first_name,
-      //   last_name
-      // ),
       const { data, error } = await supabase.from('order').select(`
           *,
           table (
             seats
+          ),
+          profile (
+            first_name,
+            last_name
           ),
           order_items:order_item (
             menu_item_id,
@@ -63,9 +64,9 @@ export const Dashboard = () => {
   const rows = orders.map(order => (
     <Table.Tr key={order.id} onClick={() => handleOrderClick(order.id)}>
       <Table.Td>{order.id}</Table.Td>
-      {/* <Table.Td> */}
-      {/*   {order.profile.first_name} {order.profile.last_name} */}
-      {/* </Table.Td> */}
+      <Table.Td>
+        {order.profile.first_name} {order.profile.last_name}
+      </Table.Td>
       <Table.Td>{DateTime.fromISO(order.date).toLocaleString(DateTime.DATETIME_MED)}</Table.Td>
       <Table.Td>{order.status}</Table.Td>
       <Table.Td>{order.type}</Table.Td>
@@ -74,7 +75,7 @@ export const Dashboard = () => {
   ))
 
   return (
-    <div>
+    <div className={classes.pageContainer}>
       <Title order={2} mt="lg" ta="center">
         Dashboard
       </Title>
@@ -87,7 +88,7 @@ export const Dashboard = () => {
         <Table.Thead>
           <Table.Tr>
             <Table.Th>ID</Table.Th>
-            {/* <Table.Th>Customer</Table.Th> */}
+            <Table.Th>Customer</Table.Th>
             <Table.Th>Date & Time</Table.Th>
             <Table.Th>Status</Table.Th>
             <Table.Th>Reservation Type</Table.Th>

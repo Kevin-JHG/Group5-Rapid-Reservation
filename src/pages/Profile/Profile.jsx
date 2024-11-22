@@ -4,6 +4,8 @@ import { supabase } from '../../api/supabase'
 import { Paper, Group, Text, Button, Modal, TextInput, ActionIcon, Avatar, Notification, rem } from '@mantine/core'
 import { IconPencil, IconPhone, IconMail, IconX, IconCheck } from '@tabler/icons-react'
 import styles from './profile.module.css'
+import { useDisclosure } from '@mantine/hooks'
+import LogoutModal from './LogoutModal/LogoutModal'
 
 const xIcon = <IconX style={{ width: rem(20), height: rem(20) }} />
 const checkIcon = <IconCheck style={{ width: rem(20), height: rem(20) }} />
@@ -14,6 +16,7 @@ export const Profile = () => {
   const [errors, setErrors] = useState({})
   const [message, setMessage] = useState('')
   const [notificationKey, setNotificationKey] = useState(0)
+  const [logoutModalOpened, { open: openLogoutModal, close: closeLogoutModal }] = useDisclosure(false)
   const navigate = useNavigate()
 
   const fetchUserInfo = async () => {
@@ -153,7 +156,13 @@ export const Profile = () => {
         <Button color="black" style={{ width: '75%' }} mt="1rem" onClick={handleDashboard}>
           Dashboard
         </Button>
+
+        <Button color="red" onClick={openLogoutModal} mt="1rem" style={{ marginLeft: '0.1rem', width: '75%' }}>
+          Log out
+        </Button>
       </Paper>
+
+      <LogoutModal opened={logoutModalOpened} close={closeLogoutModal} />
 
       <Modal style={{ userSelect: 'none' }} opened={editing} onClose={closeEditModal} title="Edit Profile">
         <TextInput

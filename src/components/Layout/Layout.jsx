@@ -38,7 +38,7 @@ export const Layout = ({ session, setSession }) => {
         <Group justify="space-between" h="100%">
           <LogoLink />
 
-          <Group h="100%" gap={0} visibleFrom="sm">
+          <Group h="100%" gap={0} visibleFrom="md">
             <NavLink to="/" className={({ isActive }) => `${classes.navLink} ${isActive ? classes.activeNavLink : ''}`}>
               Home
             </NavLink>
@@ -62,7 +62,7 @@ export const Layout = ({ session, setSession }) => {
             </NavLink>
           </Group>
 
-          <Group visibleFrom="sm">
+          <Group visibleFrom="md">
             {session ? (
               <>
                 <NavLink to="/profile">
@@ -86,7 +86,7 @@ export const Layout = ({ session, setSession }) => {
             )}
           </Group>
 
-          <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
+          <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="md" />
         </Group>
       </header>
 
@@ -111,11 +111,11 @@ export const Layout = ({ session, setSession }) => {
         padding="md"
         title={<LogoLink onClick={closeDrawer} />}
         className={classes.drawer}
-        hiddenFrom="sm"
+        hiddenFrom="md"
         zIndex={1000000}
       >
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
-          <Divider my="sm" />
+          <Divider my="md" />
 
           <NavLink
             to="/"
@@ -177,7 +177,7 @@ export const Layout = ({ session, setSession }) => {
 
           {!session && (
             <>
-              <Divider my="sm" />
+              <Divider my="md" />
               <Group justify="center" grow pb="xl" px="md">
                 <NavLink to="/login" onClick={closeDrawer}>
                   <Button variant="default" fullWidth>

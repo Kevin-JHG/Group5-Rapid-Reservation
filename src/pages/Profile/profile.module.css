@@ -1,5 +1,17 @@
 .pageContainer {
   animation: fadeInSlideUp 1.5s ease;
+  max-width: 38rem;
+  margin: 3% auto;
+  user-select: none;
+}
+
+.text {
+  margin-left: 3rem;
+}
+
+.textName {
+  margin-top: 1.5rem;
+  margin-left: 5rem;
 }
 
 .notification {
@@ -33,5 +45,22 @@
   100% {
     opacity: 0;
     transform: translateX(-5rem);
+  }
+}
+
+/* Styles for smaller screens */
+@media (max-width: 48rem) {
+  .pageContainer {
+    max-width: 30rem;
+  }
+
+  .text {
+    scale: 0.9;
+    margin-left: 1rem;
+  }
+
+  .textName {
+    scale: 0.9;
+    margin-left: 3rem;
   }
 }

@@ -4,6 +4,10 @@
   animation: fadeInSlideUp 1.5s ease;
 }
 
+.simpleGrid {
+  min-width: 27.5rem;
+}
+
 .featuredItemCard {
   position: relative;
   overflow: hidden;
@@ -45,6 +49,20 @@
   animation: none;
 }
 
+.reviews {
+  margin: 1% 0;
+  margin-bottom: 5%;
+  user-select: none;
+}
+
+.reviewCardContainer {
+  margin-bottom: 10px;
+}
+
+.reviewCards {
+  margin: 1rem;
+}
+
 @keyframes fadeInSlideUp {
   from {
     opacity: 0;
@@ -69,14 +87,25 @@
 }
 
 /* Styles for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .buttonPairContainer {
-    scale: 0.75;
+    scale: 0.85;
   }
 
   .loginButton {
-    scale: 0.75;
+    scale: 0.85;
   }
 
-  /* In progress */
+  .featuredItemName {
+    scale: 0.85;
+  }
+
+  .title {
+    scale: 0.85;
+  }
+
+  .reviewCards {
+    scale: 0.8;
+    margin: -1%;
+  }
 }

@@ -93,7 +93,7 @@ export const Home = () => {
   ]
 
   return (
-    <Flex className={styles.homePageContainer}>
+    <Flex className={styles.homePageContainer} direction="column">
       <Flex className={styles.buttonPairContainer} justify="center" style={{ width: '100%', marginTop: '3%' }} gap="md">
         <Button variant="outline" color="dark" onClick={handleReserve} radius="md" size="xl">
           RESERVE
@@ -103,19 +103,16 @@ export const Home = () => {
         </Button>
       </Flex>
 
-      <Title align="center" order={2} style={{ marginTop: '2.5%', marginBottom: '1%', userSelect: 'none' }}>
+      <Title
+        align="center"
+        order={2}
+        style={{ marginTop: '1.5rem', marginBottom: '1%', userSelect: 'none' }}
+        className={styles.title}
+      >
         Featured Menu Items
       </Title>
       <Flex justify="center" style={{ maxWidth: '50%', margin: '0 auto', marginBottom: '3%' }}>
-        <SimpleGrid
-          cols={4}
-          spacing="lg"
-          breakpoints={[
-            { maxWidth: '1200px', cols: 3, spacing: 'md' },
-            { maxWidth: '900px', cols: 2, spacing: 'sm' },
-            { maxWidth: '600px', cols: 1, spacing: 'xs' },
-          ]}
-        >
+        <SimpleGrid cols={4} spacing="lg" className={styles.simpleGrid}>
           {loading ? (
             <div
               style={{
@@ -158,25 +155,30 @@ export const Home = () => {
         )}
       </Flex>
 
-      <Title align="center" order={2} style={{ userSelect: 'none' }}>
+      <Title align="center" order={2} style={{ userSelect: 'none', marginTop: '1rem' }} className={styles.title}>
         What Our Customers Say
       </Title>
-      <Flex direction="column" align="center" style={{ margin: '1% 0', marginBottom: '5%', userSelect: 'none' }}>
-        <Flex wrap="wrap" justify="center" style={{ marginBottom: '10px', transform: 'translateX(-20px)' }}>
+      <Flex direction="column" align="center" className={styles.reviews}>
+        <Flex
+          wrap="wrap"
+          justify="center"
+          style={{ transform: 'translateX(-20px)' }}
+          className={styles.reviewCardContainer}
+        >
           {reviews.slice(0, 3).map(review => (
             <Card
               key={review.id}
               shadow="sm"
               padding="lg"
               style={{
-                margin: '10px',
-                width: '300px',
-                height: '190px',
+                width: '20rem',
+                height: '12rem',
                 border: '1px solid #ccc',
                 backgroundColor: 'white',
               }}
+              className={styles.reviewCards}
             >
-              <Text size="lg" weight={500} style={{ marginBottom: '10px' }}>
+              <Text size="lg" style={{ marginBottom: '1rem' }}>
                 {review.name}
               </Text>
               <Text
@@ -188,21 +190,26 @@ export const Home = () => {
           ))}
         </Flex>
 
-        <Flex wrap="wrap" justify="center" style={{ marginBottom: '10px', transform: 'translateX(20px)' }}>
+        <Flex
+          wrap="wrap"
+          justify="center"
+          style={{ transform: 'translateX(20px)' }}
+          className={styles.reviewCardContainer}
+        >
           {reviews.slice(3).map(review => (
             <Card
               key={review.id}
               shadow="sm"
               padding="lg"
               style={{
-                margin: '10px',
-                width: '300px',
-                height: '190px',
+                width: '20rem',
+                height: '12rem',
                 border: '1px solid #ccc',
                 backgroundColor: 'white',
               }}
+              className={styles.reviewCards}
             >
-              <Text size="lg" weight={500} style={{ marginBottom: '10px' }}>
+              <Text size="lg" style={{ marginBottom: '1rem' }}>
                 {review.name}
               </Text>
               <Text

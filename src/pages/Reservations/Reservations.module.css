@@ -37,3 +37,10 @@
     transform: translateY(0);
   }
 }
+
+/* Styles for smaller screens */
+@media (max-width: 48rem) {
+  .notLoggedIn {
+    max-width: 90%;
+  }
+}

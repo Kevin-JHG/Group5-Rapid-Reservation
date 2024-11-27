@@ -89,11 +89,11 @@ export const Profile = () => {
   }
 
   return (
-    <div className={styles.pageContainer} style={{ maxWidth: '40rem', margin: '3% auto', userSelect: 'none' }}>
+    <div className={styles.pageContainer}>
       <Paper align="center" withBorder shadow="xl" radius="md" p="md">
         <Avatar size="15rem" radius="md" src={userInfo?.avatar} style={{ marginTop: '2%', marginBottom: '2.5%' }} />
 
-        <Group style={{ marginLeft: '5rem' }}>
+        <Group className={styles.textName}>
           <Text size="1.75rem" fw={800}>
             {userInfo?.first_name} {userInfo?.last_name}
           </Text>
@@ -102,12 +102,12 @@ export const Profile = () => {
           </ActionIcon>
         </Group>
 
-        <Group mt="md" style={{ marginLeft: '3rem' }}>
+        <Group mt="md" className={styles.text}>
           <IconPhone size={18} color="gray" />
           <Text size="lg">Phone: {userInfo?.phone}</Text>
         </Group>
 
-        <Group style={{ marginLeft: '3rem' }}>
+        <Group className={styles.text}>
           <IconMail size={18} color="gray" />
           <Text size="lg">Email: {userInfo?.email}</Text>
         </Group>

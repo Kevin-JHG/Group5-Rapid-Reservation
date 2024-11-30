@@ -33,4 +33,4 @@
       - Review Jason’s documentation.
       - Share meeting link for instructor discussions if applicable.
  ## Next Meeting:
-  - Date: Thursday
+  - Date: Tuesday 11/5/2024

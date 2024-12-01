@@ -1,24 +1,28 @@
-import { useEffect, useState } from 'react'
-import { supabase } from '../../api/supabase'
-import { Select, Table, Title } from '@mantine/core'
-import { DateTime } from 'luxon'
-import { useDisclosure } from '@mantine/hooks'
+import { useEffect, useState } from "react";
+import { supabase } from "../../api/supabase";
+import { Select, Table, Title } from "@mantine/core";
+import { DateTime } from "luxon";
+import { useDisclosure } from "@mantine/hooks";
 
-import OrderModal from './OrderModal'
+import OrderModal from "./OrderModal";
 
-import classes from './Dashboard.module.css'
+import classes from "./Dashboard.module.css";
 
 export const Dashboard = () => {
-  const [orders, setOrders] = useState([])
-  const [modalOrderId, setModalOrderId] = useState(null)
-  const [opened, { open, close }] = useDisclosure(false)
+  const [orders, setOrders] = useState([]);
+  const [modalOrderId, setModalOrderId] = useState(null);
+  const [opened, { open, close }] = useDisclosure(false);
 
-  // derived state for order modal
-  const modalOrder = modalOrderId && orders.length !== 0 ? orders.find(order => order.id === modalOrderId) : null
+  // Derived state for the order modal
+  const modalOrder =
+    modalOrderId && orders.length !== 0
+      ? orders.find((order) => order.id === modalOrderId)
+      : null;
 
-  useEffect(() => {
-    const getOrders = async () => {
-      const { data, error } = await supabase.from('order').select(`
+  // Function to fetch orders from Supabase
+  const getOrders = async () => {
+    try {
+      const { data, error } = await supabase.from("order").select(`
           *,
           table (
             seats
@@ -32,47 +36,64 @@ export const Dashboard = () => {
             quantity,
             menu_item!inner(name, type, price)
           )
-        `)
+        `);
 
-      if (error) console.log(error)
+      if (error) {
+        console.error("Error fetching orders:", error);
+        return;
+      }
 
-      // add total price to data
-      const modifiedData = data.map(order => {
-        if (order.order_items.length === 0) return { ...order, total: (0).toFixed(2) }
+      // Add total price calculation to each order
+      const modifiedData = data.map((order) => {
+        if (!order.order_items || order.order_items.length === 0) {
+          return { ...order, total: (0).toFixed(2) };
+        }
 
         const totalPrice = order.order_items.reduce((acc, curr) => {
-          return acc + curr.menu_item.price * curr.quantity
-        }, 0)
+          return acc + curr.menu_item.price * curr.quantity;
+        }, 0);
 
-        return { ...order, total: totalPrice.toFixed(2) }
-      })
+        return { ...order, total: totalPrice.toFixed(2) };
+      });
 
-      console.log(modifiedData)
-      setOrders(modifiedData)
+      setOrders(modifiedData);
+    } catch (err) {
+      console.error("Unexpected error fetching orders:", err);
     }
+  };
 
-    getOrders()
-  }, [])
+  useEffect(() => {
+    getOrders();
+  }, []);
 
-  if (orders.length === 0) return <div>Loading...</div>
+  // Handle row click to open modal
+  const handleOrderClick = (id) => {
+    setModalOrderId(id);
+    open();
+  };
 
-  const handleOrderClick = id => {
-    setModalOrderId(id)
-    open()
-  }
-
-  const rows = orders.map(order => (
-    <Table.Tr key={order.id} onClick={() => handleOrderClick(order.id)}>
+  // Render rows for the table
+  const rows = orders.map((order) => (
+    <Table.Tr
+      key={order.id}
+      onClick={() => handleOrderClick(order.id)}
+      style={{ cursor: "pointer" }}
+    >
       <Table.Td>{order.id}</Table.Td>
       <Table.Td>
-        {order.profile.first_name} {order.profile.last_name}
+        {order.profile?.first_name} {order.profile?.last_name}
       </Table.Td>
-      <Table.Td>{DateTime.fromISO(order.date).toLocaleString(DateTime.DATETIME_MED)}</Table.Td>
+      <Table.Td>
+        {DateTime.fromISO(order.date).toLocaleString(DateTime.DATETIME_MED)}
+      </Table.Td>
       <Table.Td>{order.status}</Table.Td>
       <Table.Td>{order.type}</Table.Td>
       <Table.Td>${order.total}</Table.Td>
     </Table.Tr>
-  ))
+  ));
+
+  // Render loading state if orders are not fetched yet
+  if (orders.length === 0) return <div>Loading...</div>;
 
   return (
     <div className={classes.pageContainer}>
@@ -80,8 +101,12 @@ export const Dashboard = () => {
         Dashboard
       </Title>
 
-      <div style={{ width: 'fit-content' }}>
-        <Select label="Filter orders" defaultValue="All" data={['All', 'Dine-in', 'Take-out', 'Acitve']} />
+      <div style={{ width: "fit-content" }}>
+        <Select
+          label="Filter orders"
+          defaultValue="All"
+          data={["All", "Dine-in", "Take-out", "Active"]}
+        />
       </div>
 
       <Table mt="lg">
@@ -97,8 +122,14 @@ export const Dashboard = () => {
         </Table.Thead>
         <Table.Tbody>{rows}</Table.Tbody>
       </Table>
-      {/* TODO: paginate? */}
-      <OrderModal opened={opened} close={close} order={modalOrder} />
+
+      {/* Order Modal */}
+      <OrderModal
+        opened={opened}
+        close={close}
+        order={modalOrder}
+        getOrders={getOrders}
+      />
     </div>
-  )
-}
+  );
+};

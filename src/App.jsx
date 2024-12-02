@@ -13,25 +13,33 @@ import { useEffect, useState } from 'react'
 
 const theme = createTheme()
 
-const isUserEmployee = async userId => {
-  const { data: profile, error: profileError } = await supabase.from('profile').select('*').eq('id', userId)
-
-  if (profileError) {
-    throw profileError
-  }
-
-  if (!profile) {
-    throw 'User profile does not exist'
-  }
-
-  return profile.role === 'employee'
-}
-
 function App() {
   const [session, setSession] = useState(null)
   const [isEmployee, setIsEmployee] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
+
+  const isUserEmployee = async userId => {
+    const { data: profile, error: profileError } = await supabase.from('profile').select('*').eq('id', userId)
+
+    if (profileError) {
+      throw profileError
+    }
+
+    if (!profile) {
+      throw 'User profile does not exist'
+    }
+
+    // set state (used in nav bar)
+    const isEmp = profile[0].role === 'employee'
+    setIsEmployee(isEmp)
+
+    // only allow employees to access the /dashboard page
+    const { pathname } = location
+    if (pathname === '/dashboard' && !isEmp) {
+      navigate('/')
+    }
+  }
 
   useEffect(() => {
     // Get the current session
@@ -52,14 +60,8 @@ function App() {
           navigate('/')
         }
 
-        // check if user is employee & set state
-        const isEmp = isUserEmployee(session.user.id)
-        setIsEmployee(isEmp)
-
-        // only allow employees to access dashboard
-        if (pathname === '/dashboard' && !isEmp) {
-          navigate('/')
-        }
+        // check if user is employee,
+        isUserEmployee(session.user.id)
       } else {
         // Prevent unauthorized access to protected routes
         const protectedRoutes = ['/profile', '/dashboard']
